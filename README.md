@@ -1,10 +1,10 @@
 # Pholcus爬虫框架（改造版）
-原官方爬虫框架[henrylee2cn/pholcus](https://github.com/henrylee2cn/pholcus)基本停止更新，由于个人项目需要，对本项目做了一些修改和完善。
+原官方爬虫框架[henrylee2cn/pholcus](https://github.com/jason-wj/pholcus)基本停止更新，由于个人项目需要，对本项目做了一些修改和完善。
 有兴趣对可以看看原官方项目的介绍。
-感谢：[henrylee2cn](https://github.com/henrylee2cn)
+感谢：[henrylee2cn](https://github.com/jason-wj)
 
 ## 使用
-需要将项目放在$GOPATH/github.com/henrylee2cn/中，后续将会将包改为本项目路径
+需要将项目放在$GOPATH/github.com/jason-wj/目录中
 
 ## 后续打算（仅仅只是打算，根据业余时间来安排）
 1. 将pipe部分自定义化，能够根据需要灵活实现
@@ -37,5 +37,7 @@ param.header = req.GetHeader()
 ```
 self.text = []byte("") //防止self.text为nil
 ```
+
+5. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://github.com/henrylee2cn/goutil)两个辅助源码直接放在`/pholcus/common`目录中
 
 剩余调整将会根据后续需要来逐步调整。。。
