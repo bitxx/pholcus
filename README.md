@@ -40,4 +40,6 @@ self.text = []byte("") //防止self.text为nil
 
 5. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://github.com/henrylee2cn/goutil)两个辅助源码直接放在`/pholcus/common`目录中
 
+6. 加入爬虫规则示例包到项目根目录
+
 剩余调整将会根据后续需要来逐步调整。。。
