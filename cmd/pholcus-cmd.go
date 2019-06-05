@@ -9,11 +9,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/henrylee2cn/pholcus/app"
-	"github.com/henrylee2cn/pholcus/app/spider"
-	"github.com/henrylee2cn/pholcus/logs"
-	"github.com/henrylee2cn/pholcus/runtime/cache"
-	"github.com/henrylee2cn/pholcus/runtime/status"
+	"github.com/jason-wj/pholcus/app"
+	"github.com/jason-wj/pholcus/app/spider"
+	"github.com/jason-wj/pholcus/logs"
+	"github.com/jason-wj/pholcus/runtime/cache"
+	"github.com/jason-wj/pholcus/runtime/status"
 )
 
 var (

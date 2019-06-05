@@ -27,7 +27,7 @@ var (
 	once_surf    sync.Once
 	once_phantom sync.Once
 	tempJsDir    = "./tmp"
-	// phantomjsFile = filepath.Clean(path.Join(os.Getenv("GOPATH"), `/src/github.com/henrylee2cn/surfer/phantomjs/phantomjs`))
+	// phantomjsFile = filepath.Clean(path.Join(os.Getenv("GOPATH"), `/src/github.com/jason-wj/surfer/phantomjs/phantomjs`))
 	phantomjsFile = `./phantomjs`
 	cookieJar, _  = cookiejar.New(nil)
 )

@@ -6,12 +6,12 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/henrylee2cn/pholcus/app/downloader"
-	"github.com/henrylee2cn/pholcus/app/downloader/request"
-	"github.com/henrylee2cn/pholcus/app/pipeline"
-	"github.com/henrylee2cn/pholcus/app/spider"
-	"github.com/henrylee2cn/pholcus/logs"
-	"github.com/henrylee2cn/pholcus/runtime/cache"
+	"github.com/jason-wj/pholcus/app/downloader"
+	"github.com/jason-wj/pholcus/app/downloader/request"
+	"github.com/jason-wj/pholcus/app/pipeline"
+	"github.com/jason-wj/pholcus/app/spider"
+	"github.com/jason-wj/pholcus/logs"
+	"github.com/jason-wj/pholcus/runtime/cache"
 )
 
 // 采集引擎
@@ -24,11 +24,11 @@ type (
 		GetId() int                  //获取引擎ID
 	}
 	crawler struct {
-		*spider.Spider        //执行的采集规则
-		downloader.Downloader //全局公用的下载器
-		pipeline.Pipeline     //结果收集与输出管道
-		id    int             //引擎ID
-		pause [2]int64        //[请求间隔的最短时长,请求间隔的增幅时长]
+		*spider.Spider                 //执行的采集规则
+		downloader.Downloader          //全局公用的下载器
+		pipeline.Pipeline              //结果收集与输出管道
+		id                    int      //引擎ID
+		pause                 [2]int64 //[请求间隔的最短时长,请求间隔的增幅时长]
 	}
 )
 

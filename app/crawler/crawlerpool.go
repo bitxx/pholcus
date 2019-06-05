@@ -4,8 +4,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/henrylee2cn/pholcus/config"
-	"github.com/henrylee2cn/pholcus/runtime/status"
+	"github.com/jason-wj/pholcus/config"
+	"github.com/jason-wj/pholcus/runtime/status"
 )
 
 // 采集引擎池

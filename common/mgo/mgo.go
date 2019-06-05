@@ -5,9 +5,9 @@ import (
 
 	mgo "gopkg.in/mgo.v2"
 
-	"github.com/henrylee2cn/pholcus/common/pool"
-	"github.com/henrylee2cn/pholcus/config"
-	"github.com/henrylee2cn/pholcus/logs"
+	"github.com/jason-wj/pholcus/common/pool"
+	"github.com/jason-wj/pholcus/config"
+	"github.com/jason-wj/pholcus/logs"
 )
 
 type MgoSrc struct {

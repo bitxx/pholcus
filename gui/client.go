@@ -3,8 +3,8 @@ package gui
 import (
 	. "github.com/lxn/walk/declarative"
 
-	"github.com/henrylee2cn/pholcus/app"
-	"github.com/henrylee2cn/pholcus/config"
+	"github.com/jason-wj/pholcus/app"
+	"github.com/jason-wj/pholcus/config"
 )
 
 func clientWindow() {
@@ -20,17 +20,17 @@ func clientWindow() {
 		MinSize:  Size{1100, 600},
 		Layout:   VBox{MarginsZero: true},
 		Children: []Widget{
-		// Composite{
-		// 	Layout:  HBox{},
-		// 	MaxSize: Size{1100, 150},
-		// 	Children: []Widget{
-		// 		PushButton{
-		// 			MaxSize:  Size{1000, 150},
-		// 			Text:     "断开服务器连接",
-		// 			AssignTo: &runStopBtn,
-		// 		},
-		// 	},
-		// },
+			// Composite{
+			// 	Layout:  HBox{},
+			// 	MaxSize: Size{1100, 150},
+			// 	Children: []Widget{
+			// 		PushButton{
+			// 			MaxSize:  Size{1000, 150},
+			// 			Text:     "断开服务器连接",
+			// 			AssignTo: &runStopBtn,
+			// 		},
+			// 	},
+			// },
 		},
 	}.Create()); err != nil {
 		panic(err)
