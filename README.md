@@ -46,8 +46,19 @@ param.header = req.GetHeader()
 self.text = []byte("") //防止self.text为nil
 ```
 
-5. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://github.com/henrylee2cn/goutil)两个辅助源码直接放在`/pholcus/common`目录中
+5. 新增方法，用于获取请求到的页面的原始[]byte数据。原先没有提供时，如果要获取图片或者自行处理数据是很难搞的，为此在`pholcus/app/spider/context.go`第579行处加入如下代码：  
+```  
+// GetBytes returns plain bytes crawled.
+func (self *Context) GetBytes() []byte {
+	if self.text == nil {
+		self.initText()
+	}
+	return self.text
+}
+```
 
-6. 加入爬虫规则示例包到项目根目录
+6. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://github.com/henrylee2cn/goutil)两个辅助源码直接放在`/pholcus/common`目录中
+
+7. 加入爬虫规则示例包到项目根目录
 
 剩余调整将会根据后续需要来逐步调整。。。

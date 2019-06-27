@@ -573,6 +573,14 @@ func (self *Context) GetText() string {
 	return util.Bytes2String(self.text)
 }
 
+// GetBytes returns plain bytes crawled.
+func (self *Context) GetBytes() []byte {
+	if self.text == nil {
+		self.initText()
+	}
+	return self.text
+}
+
 //**************************************** 私有方法 *******************************************\\
 
 // 获取规则。
