@@ -236,7 +236,9 @@ func (self *Proxy) findUsable(proxy string, testHost string) (alive bool, timede
 	}
 	req.SetProxy(proxy)
 	resp, err := self.surf.Download(req)
-
+	if err != nil {
+		logs.Log.Informational(" *     [%v]代理测试发生错误：" + err.Error())
+	}
 	if resp.StatusCode != http.StatusOK {
 		return false, 0
 	}

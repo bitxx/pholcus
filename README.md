@@ -57,8 +57,43 @@ func (self *Context) GetBytes() []byte {
 }
 ```
 
-6. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://github.com/henrylee2cn/goutil)两个辅助源码直接放在`/pholcus/common`目录中
+6. 当response编码为"image/jpeg"或者没有指定编码时，不要进行转码操作（默认会转为utf-8，会影响图片等内容等展示）,需要在`pholcus/app/spider/context.go`第641行加入一项：
+```  
+"image/jpeg",""
+```
 
-7. 加入爬虫规则示例包到项目根目录
+7. 部分网站可能会发生url变化，此时继续爬取，会被识别为新的url来爬取，会造成和旧的url爬的数据重复。为了解决这个问题，需要在`pholcus/app/downloader/request/request.go`第19行加入：
+```  
+UrlAlias      string          //url别名，主要是为了防止网站url发生变化，影响去重。（若网站url变化，只需要在此处加入旧的url就行）
+```
+同时在142行加入：
+```  
+// 请求的唯一识别码
+func (self *Request) Unique() string {
+	if self.unique == "" {
+		if self.UrlAlias != "" {
+			block := md5.Sum([]byte(self.Spider + self.Rule + self.UrlAlias + self.Method))
+			self.unique = hex.EncodeToString(block[:])
+		} else {
+			block := md5.Sum([]byte(self.Spider + self.Rule + self.Url + self.Method))
+			self.unique = hex.EncodeToString(block[:])
+		}
+	}
+	return self.unique
+}
+```
+以后只要在Request中，指定`UrlAlias`的旧根地址即可
+
+8. 为更直观展示代理使用时候的错误提示，在`pholcus/app/aid/proxy/proxy.go`第239行加入：
+ps：曾犯下一个错误，代理测试始终报错，后来才知道，代理ip需要加上`http://`前缀，就是因为源码中忽略了下面的错误提示
+```  
+if err != nil {
+	logs.Log.Informational(" *     [%v]代理测试发生错误：" + err.Error())
+}
+```
+
+9. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://github.com/henrylee2cn/goutil)两个辅助源码直接放在`/pholcus/common`目录中
+
+10. 加入爬虫规则示例包到项目根目录
 
 剩余调整将会根据后续需要来逐步调整。。。
