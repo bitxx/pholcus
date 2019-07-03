@@ -16,6 +16,7 @@ import (
 // Request represents object waiting for being crawled.
 type Request struct {
 	Spider        string          //规则名，自动设置，禁止人为填写
+	UrlAlias      string          //url别名，主要是为了防止网站url发生变化，影响去重。（若网站url变化，只需要在此处加入旧的url就行）
 	Url           string          //目标URL，必须设置
 	Rule          string          //用于解析响应的规则节点名，必须设置
 	Method        string          //GET POST POST-M HEAD
@@ -140,8 +141,13 @@ func (self *Request) Serialize() string {
 // 请求的唯一识别码
 func (self *Request) Unique() string {
 	if self.unique == "" {
-		block := md5.Sum([]byte(self.Spider + self.Rule + self.Url + self.Method))
-		self.unique = hex.EncodeToString(block[:])
+		if self.UrlAlias != "" {
+			block := md5.Sum([]byte(self.Spider + self.Rule + self.UrlAlias + self.Method))
+			self.unique = hex.EncodeToString(block[:])
+		} else {
+			block := md5.Sum([]byte(self.Spider + self.Rule + self.Url + self.Method))
+			self.unique = hex.EncodeToString(block[:])
+		}
 	}
 	return self.unique
 }

@@ -636,7 +636,7 @@ func (self *Context) initText() {
 
 		switch pageEncode {
 		// 不做转码处理
-		case "utf8", "utf-8", "unicode-1-1-utf-8":
+		case "utf8", "utf-8", "unicode-1-1-utf-8", "":
 		default:
 			// 指定了编码类型，但不是utf8时，自动转码为utf8
 			// get converter to utf-8
