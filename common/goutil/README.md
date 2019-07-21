@@ -168,7 +168,7 @@ Chinese Lunar Calendar, Solar Calendar and cron time rules.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/calendar"
+    ""
     ```
 
 [Calendar details](calendar/README.md)
