@@ -68,7 +68,7 @@ func init() {
 		OutType:        setting.String("run::outtype"),                        // 输出方式
 		DockerCap:      setting.DefaultInt("run::dockercap", dockercap),       // 分段转储容器容量
 		Limit:          setting.DefaultInt64("run::limit", limit),             // 采集上限，0为不限，若在规则中设置初始值为LIMIT则为自定义限制，否则默认限制请求数
-		ProxyMinute:    setting.DefaultInt64("run::proxyminute", proxyminute), // 代理IP更换的间隔分钟数
+		ProxySecond:    setting.DefaultInt64("run::proxysecond", proxysecond), // 代理IP更换的间隔秒钟数
 		SuccessInherit: setting.DefaultBool("run::success", success),          // 继承历史成功记录
 		FailureInherit: setting.DefaultBool("run::failure", failure),          // 继承历史失败记录
 	}

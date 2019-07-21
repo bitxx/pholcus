@@ -110,8 +110,8 @@ func flagCommon() {
 
 	// 代理IP更换频率
 	proxyflag = flag.Int64(
-		"a_proxyminute",
-		cache.Task.ProxyMinute,
+		"a_proxysecond",
+		cache.Task.ProxySecond,
 		"   <代理IP更换频率: /m，为0时不使用代理> [>=0]")
 
 	// 分批输出
@@ -142,7 +142,7 @@ func writeFlag() {
 	cache.Task.OutType = *outputflag
 	cache.Task.ThreadNum = *threadflag
 	cache.Task.Pausetime = *pauseflag
-	cache.Task.ProxyMinute = *proxyflag
+	cache.Task.ProxySecond = *proxyflag
 	cache.Task.DockerCap = *dockerflag
 	cache.Task.SuccessInherit = *successInheritflag
 	cache.Task.FailureInherit = *failureInheritflag

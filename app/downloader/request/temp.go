@@ -2,10 +2,9 @@ package request
 
 import (
 	"encoding/json"
-	"reflect"
-
 	"github.com/jason-wj/pholcus/common/util"
 	"github.com/jason-wj/pholcus/logs"
+	"reflect"
 )
 
 type Temp map[string]interface{}
@@ -22,7 +21,9 @@ func (self Temp) get(key string, defaultValue interface{}) interface{} {
 		err error
 		b   = util.String2Bytes(self[key].(string))
 	)
-
+	if defaultValue == nil {
+		return self[key].(string)
+	}
 	if reflect.TypeOf(defaultValue).Kind() == reflect.Ptr {
 		err = json.Unmarshal(b, defaultValue)
 	} else {

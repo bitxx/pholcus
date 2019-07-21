@@ -280,10 +280,10 @@ func tplData(mode int) map[string]interface{} {
 		"curr": []int64{app.LogicApp.GetAppConf("Pausetime").(int64)},
 	}
 
-	// 代理IP更换的间隔分钟数
-	info["ProxyMinute"] = map[string][]int64{
+	// 代理IP更换的间隔秒钟数
+	info["ProxySecond"] = map[string][]int64{
 		"menu": {0, 1, 3, 5, 10, 15, 20, 30, 45, 60, 120, 180},
-		"curr": []int64{app.LogicApp.GetAppConf("ProxyMinute").(int64)},
+		"curr": []int64{app.LogicApp.GetAppConf("ProxySecond").(int64)},
 	}
 
 	// 分批输出的容量
@@ -323,7 +323,7 @@ func setConf(req map[string]interface{}) {
 
 	app.LogicApp.
 		SetAppConf("Pausetime", int64(util.Atoi(req["Pausetime"]))).
-		SetAppConf("ProxyMinute", int64(util.Atoi(req["ProxyMinute"]))).
+		SetAppConf("ProxySecond", int64(util.Atoi(req["ProxySecond"]))).
 		SetAppConf("OutType", util.Atoa(req["OutType"])).
 		SetAppConf("DockerCap", util.Atoi(req["DockerCap"])).
 		SetAppConf("Limit", int64(util.Atoi(req["Limit"]))).

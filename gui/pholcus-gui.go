@@ -45,7 +45,7 @@ func SetTaskConf() {
 	}
 	app.LogicApp.SetAppConf("ThreadNum", Input.ThreadNum).
 		SetAppConf("Pausetime", Input.Pausetime).
-		SetAppConf("ProxyMinute", Input.ProxyMinute).
+		SetAppConf("ProxySecond", Input.ProxySecond).
 		SetAppConf("OutType", Input.OutType).
 		SetAppConf("DockerCap", Input.DockerCap).
 		SetAppConf("Limit", Input.Limit).

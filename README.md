@@ -1,7 +1,16 @@
 # Pholcus爬虫框架（改造版）
 原官方爬虫框架[henrylee2cn/pholcus](https://github.com/jason-wj/pholcus)基本停止更新，由于个人项目需要，对本项目做了一些修改和完善。
 有兴趣对可以看看原官方项目的介绍。
-感谢：[henrylee2cn](https://github.com/jason-wj)
+感谢：[henrylee2cn](https://github.com/henrylee2cn)
+
+## 2019-07-21更新
+1. 多处细节和异常更新
+2. 代理模块重构，简化代理逻辑
+3. views的操作，请参考 /pholcus/web/bindata_assetfs_usage，使用前请现在该目录下将views.zip解压并根据自己需要修改页面
+4. 目前可在/pholcus/config/config.go中根据需要修改日志文件名称，方便区分每个城市的爬虫
+5. 其余众多功能改造，就不一一细说了
+
+## 以下历史记录，部分可供参考
 
 ## 使用
 需要将项目放在$GOPATH/github.com/jason-wj/目录中

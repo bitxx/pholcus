@@ -153,6 +153,11 @@ func (self *crawler) Process(req *request.Request) {
 		}
 	}()
 
+	/*s := getProxyHost()
+	if s != "" {
+		req.SetProxy(s)
+	}*/
+
 	var ctx = self.Downloader.Download(sp, req) // download page
 
 	if err := ctx.GetError(); err != nil {
@@ -195,6 +200,30 @@ func (self *crawler) Process(req *request.Request) {
 	spider.PutContext(ctx)
 }
 
+//TODO: 为方便使用，临时加入代理代码
+/*var proxyHttp *myhttp.HttpSend
+
+func getProxyHost() string {
+	if proxyHttp == nil {
+		proxyHttp = myhttp.NewHttpSend("http://dynamic.goubanjia.com/dynamic/get/d78f737fdc441096922e4ef2391b51bd.html?sep=3")
+	}
+	proxyData, err := proxyHttp.Get(false)
+	if err != nil {
+		logs.Log.Error("获取代理ip失败：" + err.Error())
+		return ""
+	}
+
+	reg := regexp.MustCompile(`\d{1,3}([.]\d{1,3}){3}:\d{2,5}`)
+	res := reg.FindString(string(proxyData))
+	if res != "" {
+		logs.Log.Error("解析代理ip成功：" + "http://" + res)
+		return "http://" + res
+	} else {
+		logs.Log.Error("解析代理ip失败：" + string(proxyData))
+		return ""
+	}
+}
+*/
 // 常用基础方法
 func (self *crawler) sleep() {
 	self.setPauseTime()

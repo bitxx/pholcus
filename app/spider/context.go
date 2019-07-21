@@ -633,7 +633,6 @@ func (self *Context) initText() {
 				}
 			}
 		}
-
 		switch pageEncode {
 		// 不做转码处理
 		case "utf8", "utf-8", "unicode-1-1-utf-8", "":
@@ -642,7 +641,6 @@ func (self *Context) initText() {
 			// get converter to utf-8
 			// Charset auto determine. Use golang.org/x/net/html/charset. Get response body and change it to utf-8
 			var destReader io.Reader
-
 			if len(pageEncode) == 0 {
 				destReader, err = charset.NewReader(self.Response.Body, "")
 			} else {

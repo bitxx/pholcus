@@ -18,7 +18,7 @@ type AppConf struct {
 	OutType        string // 输出方式
 	DockerCap      int    // 分段转储容器容量
 	Limit          int64  // 采集上限，0为不限，若在规则中设置初始值为LIMIT则为自定义限制，否则默认限制请求数
-	ProxyMinute    int64  // 代理IP更换的间隔分钟数
+	ProxySecond    int64  // 代理IP更换的间隔秒数
 	SuccessInherit bool   // 继承历史成功记录
 	FailureInherit bool   // 继承历史失败记录
 	// 选填项

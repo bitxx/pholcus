@@ -42,7 +42,7 @@ const (
 	outtype     string = "csv"        // 输出方式
 	dockercap   int    = 10000        // 分段转储容器容量
 	limit       int64  = 0            // 采集上限，0为不限，若在规则中设置初始值为LIMIT则为自定义限制，否则默认限制请求数
-	proxyminute int64  = 0            // 代理IP更换的间隔分钟数
+	proxysecond int64  = 0            // 代理IP更换的间隔秒钟数
 	success     bool   = true         // 继承历史成功记录
 	failure     bool   = true         // 继承历史失败记录
 )
@@ -103,7 +103,7 @@ func defaultConfig(iniconf config.Configer) {
 	iniconf.Set("run::outtype", outtype)
 	iniconf.Set("run::dockercap", strconv.Itoa(dockercap))
 	iniconf.Set("run::limit", strconv.FormatInt(limit, 10))
-	iniconf.Set("run::proxyminute", strconv.FormatInt(proxyminute, 10))
+	iniconf.Set("run::proxysecond", strconv.FormatInt(proxysecond, 10))
 	iniconf.Set("run::success", fmt.Sprint(success))
 	iniconf.Set("run::failure", fmt.Sprint(failure))
 }
@@ -231,8 +231,8 @@ func trySet(iniconf config.Configer) {
 		iniconf.Set("run::limit", strconv.FormatInt(limit, 10))
 	}
 
-	if v, e := iniconf.Int64("run::proxyminute"); v <= 0 || e != nil {
-		iniconf.Set("run::proxyminute", strconv.FormatInt(proxyminute, 10))
+	if v, e := iniconf.Int64("run::proxysecond"); v <= 0 || e != nil {
+		iniconf.Set("run::proxysecond", strconv.FormatInt(proxysecond, 10))
 	}
 
 	if _, e := iniconf.Bool("run::success"); e != nil {

@@ -37,7 +37,8 @@ type Request struct {
 	//1为PhantomJS下载器，特点破防力强，速度慢，低并发
 	DownloaderID int
 
-	proxy  string //当用户界面设置可使用代理IP时，自动设置代理
+	proxy string //当用户界面设置可使用代理IP时，自动设置代理
+
 	unique string //ID
 	lock   sync.RWMutex
 }
@@ -129,8 +130,14 @@ func UnSerialize(s string) (*Request, error) {
 }
 
 // 序列化
+// TODO 对导出的部分数据问题进行修复，爬取失败的记录原先会不停的累加"和\
 func (self *Request) Serialize() string {
 	for k, v := range self.Temp {
+		_, ok := v.(string)
+		if ok {
+			v = strings.Replace(v.(string), `\`, "", -1)
+			v = strings.Replace(v.(string), `"`, "", -1)
+		}
 		self.Temp.set(k, v)
 		self.TempIsJson[k] = true
 	}

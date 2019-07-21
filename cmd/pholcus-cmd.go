@@ -41,7 +41,7 @@ func Flag() {
 	flag.String(
 		"c_z",
 		"",
-		"CMD-EXAMPLE: $ pholcus -_ui=cmd -a_mode="+strconv.Itoa(status.OFFLINE)+" -c_spider=3,8 -a_outtype=csv -a_thread=20 -a_dockercap=5000 -a_pause=300 -a_proxyminute=0 -a_keyins=\"<pholcus><golang>\" -a_limit=10 -a_success=true -a_failure=true\n",
+		"CMD-EXAMPLE: $ pholcus -_ui=cmd -a_mode="+strconv.Itoa(status.OFFLINE)+" -c_spider=3,8 -a_outtype=csv -a_thread=20 -a_dockercap=5000 -a_pause=300 -a_proxysecond=0 -a_keyins=\"<pholcus><golang>\" -a_limit=10 -a_success=true -a_failure=true\n",
 	)
 }
 
@@ -95,7 +95,7 @@ func parseInput() {
 		"-a_outtype",
 		"-a_thread",
 		"-a_pause",
-		"-a_proxyminute",
+		"-a_proxysecond",
 		"-a_dockercap",
 		"-a_success",
 		"-a_failure"})
@@ -137,12 +137,12 @@ retry:
 				break
 			}
 			cache.Task.Pausetime = pause
-		case "-a_proxyminute":
-			proxyminute, err := strconv.ParseInt(value, 10, 64)
+		case "-a_proxysecond":
+			proxySecond, err := strconv.ParseInt(value, 10, 64)
 			if err != nil {
 				break
 			}
-			cache.Task.ProxyMinute = proxyminute
+			cache.Task.ProxySecond = proxySecond
 		case "-a_dockercap":
 			dockercap, err := strconv.Atoi(value)
 			if err != nil {
@@ -173,7 +173,7 @@ retry:
 				"-a_outtype",
 				"-a_thread",
 				"-a_pause",
-				"-a_proxyminute",
+				"-a_proxysecond",
 				"-a_dockercap",
 				"-a_success",
 				"-a_failure"})

@@ -14,7 +14,7 @@ type Inputor struct {
 	Spiders []*GUISpider
 	*cache.AppConf
 	Pausetime   int64
-	ProxyMinute int64
+	ProxySecond int64
 }
 
 var (
@@ -33,7 +33,7 @@ var (
 var Input = &Inputor{
 	AppConf:     cache.Task,
 	Pausetime:   cache.Task.Pausetime,
-	ProxyMinute: cache.Task.ProxyMinute,
+	ProxySecond: cache.Task.ProxySecond,
 }
 
 //****************************************GUI内容显示配置*******************************************\\
@@ -52,7 +52,7 @@ type KV struct {
 var GuiOpt = struct {
 	Mode        []*KV
 	Pausetime   []*KV
-	ProxyMinute []*KV
+	ProxySecond []*KV
 }{
 	Mode: []*KV{
 		{Key: "单机", Int: status.OFFLINE},
@@ -73,18 +73,18 @@ var GuiOpt = struct {
 		{Key: "30 秒", Int64: 30000},
 		{Key: "60 秒", Int64: 60000},
 	},
-	ProxyMinute: []*KV{
+	ProxySecond: []*KV{
 		{Key: "不使用代理", Int64: 0},
-		{Key: "1 分钟", Int64: 1},
-		{Key: "3 分钟", Int64: 3},
-		{Key: "5 分钟", Int64: 5},
-		{Key: "10 分钟", Int64: 10},
-		{Key: "15 分钟", Int64: 15},
-		{Key: "20 分钟", Int64: 20},
-		{Key: "30 分钟", Int64: 30},
-		{Key: "45 分钟", Int64: 45},
-		{Key: "60 分钟", Int64: 60},
-		{Key: "120 分钟", Int64: 120},
-		{Key: "180 分钟", Int64: 180},
+		{Key: "1 秒钟", Int64: 1},
+		{Key: "3 秒钟", Int64: 3},
+		{Key: "5 秒钟", Int64: 5},
+		{Key: "10 秒钟", Int64: 10},
+		{Key: "15 秒钟", Int64: 15},
+		{Key: "20 秒钟", Int64: 20},
+		{Key: "30 秒钟", Int64: 30},
+		{Key: "45 秒钟", Int64: 45},
+		{Key: "60 秒钟", Int64: 60},
+		{Key: "120 秒钟", Int64: 120},
+		{Key: "180 秒钟", Int64: 180},
 	},
 }

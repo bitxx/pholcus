@@ -77,7 +77,7 @@ type AppConf struct {
 	SuccessInherit bool   // 继承历史成功记录
 	FailureInherit bool   // 继承历史失败记录
 	Limit          int64  // 采集上限，0为不限，若在规则中设置初始值为LIMIT则为自定义限制，否则默认限制请求数
-	ProxyMinute    int64  // 代理IP更换的间隔分钟数
+	ProxySecond    int64  // 代理IP更换的间隔秒钟数
 	// 选填项
 	Keyins string // 自定义输入，后期切分为多个任务的Keyin自定义配置
 }
@@ -668,7 +668,7 @@ func (self *Logic) setAppConf(task *distribute.Task) {
 	self.AppConf.SuccessInherit = task.SuccessInherit
 	self.AppConf.FailureInherit = task.FailureInherit
 	self.AppConf.Limit = task.Limit
-	self.AppConf.ProxyMinute = task.ProxyMinute
+	self.AppConf.ProxySecond = task.ProxySecond
 	self.AppConf.Keyins = task.Keyins
 }
 func (self *Logic) setTask(task *distribute.Task) {
@@ -679,6 +679,6 @@ func (self *Logic) setTask(task *distribute.Task) {
 	task.SuccessInherit = self.AppConf.SuccessInherit
 	task.FailureInherit = self.AppConf.FailureInherit
 	task.Limit = self.AppConf.Limit
-	task.ProxyMinute = self.AppConf.ProxyMinute
+	task.ProxySecond = self.AppConf.ProxySecond
 	task.Keyins = self.AppConf.Keyins
 }

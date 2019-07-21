@@ -119,10 +119,10 @@ func offlineWindow() {
 										Text: "*代理IP更换频率:",
 									},
 									ComboBox{
-										Value:         Bind("ProxyMinute", SelRequired{}),
+										Value:         Bind("ProxySecond", SelRequired{}),
 										DisplayMember: "Key",
 										BindingMember: "Int64",
-										Model:         GuiOpt.ProxyMinute,
+										Model:         GuiOpt.ProxySecond,
 									},
 								},
 							},
