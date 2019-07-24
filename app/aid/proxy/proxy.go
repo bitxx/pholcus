@@ -1,7 +1,6 @@
 package proxy
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -52,7 +51,6 @@ func (self *Proxy) Update() *Proxy {
 
 // 更新继时器
 func (self *Proxy) UpdateTicker(tickSecond int64) {
-	fmt.Println("更新代理-------")
 	self.tickSecond = tickSecond
 	self.ticker = time.NewTicker(time.Duration(self.tickSecond) * time.Second)
 }
