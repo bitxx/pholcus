@@ -133,15 +133,16 @@ func UnSerialize(s string) (*Request, error) {
 // TODO 对导出的部分数据问题进行修复，爬取失败的记录原先会不停的累加"和\
 func (self *Request) Serialize() string {
 	for k, v := range self.Temp {
+		if strings.Contains(v.(string), `""`) {
+			tmp := strings.Replace(v.(string), `"`, "", -1)
+			tmp = strings.Replace(tmp, `\`, "", -1)
+			v = tmp
+		}
 		self.Temp.set(k, v)
 		self.TempIsJson[k] = true
 	}
 	b, _ := json.Marshal(self)
-	s := util.Bytes2String(b)
-	s = strings.Replace(s, `\u0026`, `&`, -1)
-	s = strings.Replace(s, `\`, "", -1)
-	s = strings.Replace(s, `"`, "", -1)
-	return s
+	return strings.Replace(util.Bytes2String(b), `\u0026`, `&`, -1)
 }
 
 // 请求的唯一识别码
