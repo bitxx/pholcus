@@ -142,7 +142,9 @@ func (self *Request) Serialize() string {
 		self.TempIsJson[k] = true
 	}
 	b, _ := json.Marshal(self)
-	return strings.Replace(util.Bytes2String(b), `\u0026`, `&`, -1)
+	s := strings.Replace(util.Bytes2String(b), `\u0026`, `&`, -1)
+	s = strings.Replace(s, `\"`, "", -1)
+	return s
 }
 
 // 请求的唯一识别码
