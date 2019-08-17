@@ -16,7 +16,7 @@ _testmain.go
 *.test
 *.prof
 *.rar
-*.zip
+# *.zip
 *.gz
 *.psd
 *.bmd
