@@ -23,6 +23,7 @@ type Matrix struct {
 	history         history.Historier           // 历史记录
 	tempHistory     map[string]bool             // 临时记录 [reqUnique(url+method)]true
 	failures        map[string]*request.Request // 历史及本次失败请求
+	hasFaliure      bool                        // 新增：是否有历史爬取失败信息,通知应用层
 	tempHistoryLock sync.RWMutex
 	failureLock     sync.Mutex
 	sync.Mutex
@@ -43,7 +44,17 @@ func newMatrix(spiderName, spiderSubName string, maxPage int64) *Matrix {
 		matrix.history.ReadFailure(cache.Task.OutType, cache.Task.FailureInherit)
 		matrix.setFailures(matrix.history.PullFailure())
 	}
+	//新增，让外界知道当前启动规则，是否已有历史爬取失败记录
+	if len(matrix.failures) > 0 {
+		matrix.hasFaliure = true
+	} else {
+		matrix.hasFaliure = false
+	}
 	return matrix
+}
+
+func (self *Matrix) HasFaliure() bool {
+	return self.hasFaliure
 }
 
 // 添加请求到队列，并发安全
