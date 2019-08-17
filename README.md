@@ -1,5 +1,5 @@
 # Pholcus爬虫框架（改造版）
-原官方爬虫框架[henrylee2cn/pholcus](https://github.com/jason-wj/pholcus)基本停止更新，由于个人项目需要，对本项目做了一些修改和完善。
+原官方爬虫框架[henrylee2cn/pholcus](https://github.com/henrylee2cn/pholcus)基本停止更新，由于个人项目需要，对本项目做了一些修改和完善。
 有兴趣对可以看看原官方项目的介绍。
 感谢：[henrylee2cn](https://github.com/henrylee2cn)
 
