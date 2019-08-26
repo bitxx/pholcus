@@ -1,7 +1,6 @@
 package spider
 
 import (
-	"fmt"
 	"math"
 	"sync"
 	"time"
@@ -293,12 +292,14 @@ func (self *Spider) Start() {
 		self.status = status.RUN
 		self.lock.Unlock()
 	}()
-	fmt.Println(self.reqMatrix.HasFaliure())
-	fmt.Println(self.ContinueSpiderWithFailure)
 	//如果有失败记录，则只处理爬取失败记录，不进行新的规则爬取
 	if self.reqMatrix.HasFaliure() == false || (self.reqMatrix.HasFaliure()) == true && self.ContinueSpiderWithFailure == true {
 		self.RuleTree.Root(GetContext(self, nil))
 	}
+}
+
+func (self *Spider) DeleteSuccess(reqUnique string) {
+	self.reqMatrix.DeleteSuccess(reqUnique)
 }
 
 // 主动崩溃爬虫运行协程
