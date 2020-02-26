@@ -2,6 +2,8 @@
 原官方爬虫框架[henrylee2cn/pholcus](https://github.com/henrylee2cn/pholcus)基本停止更新，由于个人项目需要，对本项目做了一些修改和完善。
 有兴趣对可以看看原官方项目的介绍。
 感谢：[henrylee2cn](https://github.com/henrylee2cn)
+因爬虫项目在政策上的敏感性，本项目将根据原作者的项目状态而随时做出调整（如项目删除、免责声明等）
+再次声明：本项目仅供学习
 
 # 免责声明
 本软件仅用于学术研究，使用者需遵守其所在地的相关法律法规，请勿用于非法用途！！ 如在中国大陆频频爆出爬虫开发者涉诉与违规的[新闻](https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China)。
