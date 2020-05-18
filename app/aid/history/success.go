@@ -48,6 +48,7 @@ func (self *Success) HasSuccess(reqUnique string) bool {
 func (self *Success) DeleteSuccess(reqUnique string) {
 	self.RWMutex.Lock()
 	delete(self.new, reqUnique)
+	delete(self.old, reqUnique)
 	self.RWMutex.Unlock()
 }
 
