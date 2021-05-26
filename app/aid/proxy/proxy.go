@@ -1,16 +1,12 @@
 package proxy
 
 import (
-	"io/ioutil"
 	"log"
-	"os"
 	"regexp"
 	"time"
-
-	"github.com/jason-wj/pholcus/config"
 )
 
-//author: 代理模块基本重构 wj
+// Proxy author: 代理模块基本重构 wj
 type Proxy struct {
 	proxyIPTypeRegexp *regexp.Regexp
 	allProxyIps       []string
@@ -26,30 +22,23 @@ func New() *Proxy {
 	return p
 }
 
-// 代理IP数量
+// Count 代理IP数量
 func (self *Proxy) Count() int32 {
 	return int32(len(self.allProxyIps))
 }
 
-// 更新代理IP列表
+// Update 更新代理IP列表
 func (self *Proxy) Update() *Proxy {
-	f, err := os.Open(config.PROXY)
+	err := self.ProxyInfo()
 	if err != nil {
-		// logs.Log.Error("Error: %v\n", err)
+		log.Printf("代理读取错误：%s", err.Error())
 		return self
-	}
-	b, _ := ioutil.ReadAll(f)
-	f.Close()
-
-	proxysIPType := self.proxyIPTypeRegexp.FindAllString(string(b), -1)
-	for _, proxy := range proxysIPType {
-		self.allProxyIps = append(self.allProxyIps, proxy)
 	}
 	log.Printf(" *     读取代理IP: %v 条\n", len(self.allProxyIps))
 	return self
 }
 
-// 更新继时器
+// UpdateTicker 更新继时器
 func (self *Proxy) UpdateTicker(tickSecond int64) {
 	self.tickSecond = tickSecond
 	self.ticker = time.NewTicker(time.Duration(self.tickSecond) * time.Second)
