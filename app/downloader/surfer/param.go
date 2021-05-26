@@ -57,7 +57,7 @@ func NewParam(req Request) (param *Param, err error) {
 	}
 
 	//TODO 除去此处header的设置，否则会造成部分请求异常，返回403
-	//param.header = req.GetHeader()
+	param.header = req.GetHeader()
 	if param.header == nil {
 		param.header = make(http.Header)
 	}
