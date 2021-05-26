@@ -2,9 +2,9 @@ package proxy
 
 import (
 	"errors"
+	"github.com/jason-wj/pholcus/common/net/myhttp"
 	"log"
 	"regexp"
-	"sangular.com/estate/data-crawler/common/net/myhttp"
 	"time"
 
 	"github.com/jason-wj/pholcus/config"
