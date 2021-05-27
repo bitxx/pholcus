@@ -166,7 +166,7 @@ func (self *Matrix) DoHistory(req *request.Request, ok bool) bool {
 		delete(self.tempHistory, req.Unique())
 		self.tempHistoryLock.Unlock()
 
-		if ok {
+		if ok && req.NeedUrlUnique {
 			self.history.UpsertSuccess(req.Unique())
 			return false
 		}

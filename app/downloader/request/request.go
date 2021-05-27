@@ -16,6 +16,7 @@ import (
 // Request represents object waiting for being crawled.
 type Request struct {
 	Spider        string          //规则名，自动设置，禁止人为填写
+	NeedUrlUnique bool            //是否需要url去重
 	UrlAlias      string          //url别名，主要是为了防止网站url发生变化，影响去重。（若网站url变化，只需要在此处加入旧的url就行）
 	Url           string          //目标URL，必须设置
 	Rule          string          //用于解析响应的规则节点名，必须设置

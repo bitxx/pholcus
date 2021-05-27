@@ -122,5 +122,16 @@ if err != nil {
 ctx.GetSpider().DeleteSuccess(ctx.Request.Unique())
 ```
 
+12. 可手动判断是否要某条链接作为去重处理，Request中加入参数：NeedUrlUnique，加入库中，默认不去重:
+
+```txt
+app/scheduler/matrix.go 169行
+if ok && req.NeedUrlUnique {
+
+}
+
+```
+
+
 
 剩余调整将会根据后续需要来逐步调整。。。
