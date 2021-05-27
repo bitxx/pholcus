@@ -29,11 +29,12 @@ func (self *Proxy) Count() int32 {
 
 // Update 更新代理IP列表
 func (self *Proxy) Update() *Proxy {
-	err := self.ProxyInfo()
+	allProxyIps,err := self.ProxyInfo()
 	if err != nil {
 		log.Printf("代理读取错误：%s", err.Error())
 		return self
 	}
+	self.allProxyIps = allProxyIps
 	log.Printf(" *     读取代理IP: %v 条\n", len(self.allProxyIps))
 	return self
 }
