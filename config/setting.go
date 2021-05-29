@@ -88,6 +88,8 @@ func defaultConfig(iniconf config.Configer) {
 	iniconf.Set("fileoutdir", fileoutdir)
 	iniconf.Set("textoutdir", textoutdir)
 	iniconf.Set("dbname", dbname)
+	iniconf.Set("mgo::username", "")
+	iniconf.Set("mgo::password", "")
 	iniconf.Set("mgo::connstring", mgoconnstring)
 	iniconf.Set("mgo::conncap", strconv.Itoa(mgoconncap))
 	iniconf.Set("mgo::conngcsecond", strconv.FormatInt(mgoconngcsecond, 10))

@@ -34,12 +34,14 @@ const (
 var (
 	CRAWLS_CAP int = setting.DefaultInt("crawlcap", crawlcap) // 蜘蛛池最大容量
 	// DATA_CHAN_CAP            int    = setting.DefaultInt("datachancap", datachancap)                               // 收集器容量
-	PHANTOMJS                string = setting.String("phantomjs")                                          // Surfer-Phantom下载器：phantomjs程序路径
-	PROXY                    string = setting.String("proxylib")                                           // 代理IP文件路径
-	SPIDER_DIR               string = setting.String("spiderdir")                                          // 动态规则目录
-	FILE_DIR                 string = setting.String("fileoutdir")                                         // 文件（图片、HTML等）结果的输出目录
-	TEXT_DIR                 string = setting.String("textoutdir")                                         // excel或csv输出方式下，文本结果的输出目录
-	DB_NAME                  string = setting.String("dbname")                                             // 数据库名称
+	PHANTOMJS                string = setting.String("phantomjs")  // Surfer-Phantom下载器：phantomjs程序路径
+	PROXY                    string = setting.String("proxylib")   // 代理IP文件路径
+	SPIDER_DIR               string = setting.String("spiderdir")  // 动态规则目录
+	FILE_DIR                 string = setting.String("fileoutdir") // 文件（图片、HTML等）结果的输出目录
+	TEXT_DIR                 string = setting.String("textoutdir") // excel或csv输出方式下，文本结果的输出目录
+	DB_NAME                  string = setting.String("dbname")     // 数据库名称
+	MGO_ADMIN_USERNAME       string = setting.String("mgo::username")
+	MGO_ADMIN_PASSWORD       string = setting.String("mgo::password")
 	MGO_CONN_STR             string = setting.String("mgo::connstring")                                    // mongodb连接字符串
 	MGO_CONN_CAP             int    = setting.DefaultInt("mgo::conncap", mgoconncap)                       // mongodb连接池容量
 	MGO_CONN_GC_SECOND       int64  = setting.DefaultInt64("mgo::conngcsecond", mgoconngcsecond)           // mongodb连接池GC时间，单位秒

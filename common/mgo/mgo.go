@@ -1,6 +1,7 @@
 package mgo
 
 import (
+	"os"
 	"time"
 
 	mgo "gopkg.in/mgo.v2"
@@ -40,6 +41,14 @@ func Refresh() {
 	} else if err = session.Ping(); err != nil {
 		logs.Log.Error("MongoDB：%v\n", err)
 	} else {
+		if config.MGO_ADMIN_USERNAME!=""{
+			myDB := session.DB("admin")
+			err = myDB.Login(config.MGO_ADMIN_USERNAME, config.MGO_ADMIN_PASSWORD)
+			if err != nil {
+				logs.Log.Error("MongoDB：%v\n", err)
+				os.Exit(0)
+			}
+		}
 		session.SetPoolLimit(config.MGO_CONN_CAP)
 	}
 }
