@@ -132,6 +132,8 @@ if ok && req.NeedUrlUnique {
 
 ```
 
+13. mongo完善，支持用admin的username和password来加密村粗，若username为空，则认为不需要账号和密码
+
 
 
 剩余调整将会根据后续需要来逐步调整。。。
