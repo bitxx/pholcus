@@ -34,7 +34,12 @@ func (self *Proxy) Update() *Proxy {
 		log.Printf("代理读取错误：%s", err.Error())
 		return self
 	}
+
 	self.allProxyIps = allProxyIps
+	if len(self.allProxyIps)<=0{
+		return self
+	}
+
 	log.Printf(" *     读取代理IP: %v 条\n", len(self.allProxyIps))
 	return self
 }
