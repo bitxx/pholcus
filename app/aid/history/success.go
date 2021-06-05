@@ -44,14 +44,6 @@ func (self *Success) HasSuccess(reqUnique string) bool {
 	return has
 }
 
-// 删除成功记录
-func (self *Success) DeleteSuccess(reqUnique string) {
-	self.RWMutex.Lock()
-	delete(self.new, reqUnique)
-	delete(self.old, reqUnique)
-	self.RWMutex.Unlock()
-}
-
 func (self *Success) flush(provider string) (sLen int, err error) {
 	self.RWMutex.Lock()
 	defer self.RWMutex.Unlock()

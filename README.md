@@ -104,13 +104,7 @@ if err != nil {
 
 10. 加入爬虫规则示例包到项目根目录
 
-11. 删除请求成功，但返回内容不正确的记录（比如请求的数据页面，返回的却是验证码页面），此时框架认为请求成功成功，而我们基于页面内容认为是错误的，那我们就可以在爬取期间将该请求链接删除，防止去重造成不再访问该网站。
-就是说,业务判断认为失败的链接，想要从pholcus的历史记录中删除（如果不删除，那下次该链接更新了内容就很难判断是否要爬取该页面了）
-```
-ctx.GetSpider().DeleteSuccess(ctx.Request.Unique())
-```
-
-12. 可手动判断是否要某条链接作为去重处理，Request中加入参数：NeedUrlUnique，加入库中，默认不去重:
+11. 可手动判断是否要某条链接作为去重处理，Request中加入参数：NeedUrlUnique，加入库中，默认不去重:
 
 ```txt
 app/scheduler/matrix.go 169行
@@ -120,7 +114,7 @@ if ok && req.NeedUrlUnique {
 
 ```
 
-13. mongo完善，支持用admin的username和password来加密村粗，若username为空，则认为不需要账号和密码
+12. mongo完善，支持用admin的username和password来加密村粗，若username为空，则认为不需要账号和密码
 
 
 

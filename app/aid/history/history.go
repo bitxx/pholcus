@@ -22,7 +22,6 @@ type (
 		ReadSuccess(provider string, inherit bool) // 读取成功记录
 		UpsertSuccess(string) bool                 // 更新或加入成功记录
 		HasSuccess(string) bool                    // 检查是否存在某条成功记录
-		DeleteSuccess(string)                      // 删除成功记录
 		FlushSuccess(provider string)              // I/O输出成功记录，但不清缓存
 
 		ReadFailure(provider string, inherit bool) // 取出失败记录

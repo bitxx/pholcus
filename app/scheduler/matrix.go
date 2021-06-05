@@ -57,10 +57,6 @@ func (self *Matrix) HasFaliure() bool {
 	return self.hasFaliure
 }
 
-func (self *Matrix) DeleteSuccess(reqUnique string) {
-	self.history.DeleteSuccess(reqUnique)
-}
-
 // 添加请求到队列，并发安全
 func (self *Matrix) Push(req *request.Request) {
 	// 禁止并发，降低请求积存量

@@ -298,10 +298,6 @@ func (self *Spider) Start() {
 	}
 }
 
-func (self *Spider) DeleteSuccess(reqUnique string) {
-	self.reqMatrix.DeleteSuccess(reqUnique)
-}
-
 // 主动崩溃爬虫运行协程
 func (self *Spider) Stop() {
 	self.lock.Lock()
