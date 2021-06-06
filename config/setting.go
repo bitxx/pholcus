@@ -21,7 +21,7 @@ const (
 	loglineinfo           bool   = false                       // 日志是否打印行信息
 	logsave               bool   = true                        // 是否保存所有日志到本地文件
 	phantomjs             string = WORK_ROOT + "/phantomjs"    // phantomjs文件路径
-	proxylib              string = WORK_ROOT + "/proxy.lib"    // 代理ip文件路径
+	proxylib              string = "需手动输入，当前仅支持http://www.goubanjia.com/提供的链接"    // 代理ip商提供的地址
 	spiderdir             string = WORK_ROOT + "/spiders"      // 动态规则目录
 	fileoutdir            string = WORK_ROOT + "/file_out"     // 文件（图片、HTML等）结果的输出目录
 	textoutdir            string = WORK_ROOT + "/text_out"     // excel或csv输出方式下，文本结果的输出目录
