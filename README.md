@@ -116,6 +116,17 @@ if ok && req.NeedUrlUnique {
 
 12. mongo完善，支持用admin的username和password来加密村粗，若username为空，则认为不需要账号和密码
 
+13. 爬虫进行中的web页面无法自动打开问题处理(IE11偶尔能自动打开)，目前，通过异步监听socket的open状态来改进打开页面机制。 
+问题点：原先官方在`web/views/js/app.js`的home()方法中，如果先前关闭浏览器的时候已经在爬取页面，那mode=-1，此时调用home()时，就会直接调用ws.send()方法，但此时ws还没成功open建立链接，造成页面无法正常打开。
+    
+改进：`web/views/js/app.js`的home()方法中，异步监听ws的open建立成功：
+```html
+//添加事件监听
+ws.addEventListener('open', function () {
+    Open('refresh');
+});
+```
+
 
 
 剩余调整将会根据后续需要来逐步调整。。。
