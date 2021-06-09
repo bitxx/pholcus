@@ -3,7 +3,7 @@ package cron
 import (
 	"time"
 
-	"github.com/jason-wj/pholcus/common/goutil/calendar"
+	"pholcus/common/goutil/calendar"
 )
 
 // ConstantDelaySchedule represents a simple recurring duty cycle, e.g. "Every 5 minutes".

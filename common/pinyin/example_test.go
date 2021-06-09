@@ -1,7 +1,7 @@
 package pinyin_test
 
 import (
-	"github.com/jason-wj/pholcus/common/pinyin"
+	"pholcus/common/pinyin"
 	"testing"
 )
 

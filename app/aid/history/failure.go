@@ -7,11 +7,11 @@ import (
 	"os"
 	"sync"
 
-	"github.com/jason-wj/pholcus/app/downloader/request"
-	"github.com/jason-wj/pholcus/common/mgo"
-	"github.com/jason-wj/pholcus/common/mysql"
-	"github.com/jason-wj/pholcus/common/pool"
-	"github.com/jason-wj/pholcus/config"
+	"pholcus/app/downloader/request"
+	"pholcus/common/mgo"
+	"pholcus/common/mysql"
+	"pholcus/common/pool"
+	"pholcus/config"
 )
 
 type Failure struct {

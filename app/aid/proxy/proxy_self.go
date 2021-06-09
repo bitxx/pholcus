@@ -2,12 +2,12 @@ package proxy
 
 import (
 	"errors"
-	"github.com/jason-wj/pholcus/common/net/myhttp"
+	"pholcus/common/net/myhttp"
 	"log"
 	"regexp"
 	"time"
 
-	"github.com/jason-wj/pholcus/config"
+	"pholcus/config"
 )
 
 /**

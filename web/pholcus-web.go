@@ -13,9 +13,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/jason-wj/pholcus/app"
-	"github.com/jason-wj/pholcus/logs"
-	"github.com/jason-wj/pholcus/runtime/cache"
+	"pholcus/app"
+	"pholcus/logs"
+	"pholcus/runtime/cache"
 )
 
 var (
