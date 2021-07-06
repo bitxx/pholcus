@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"pholcus/common/config"
-	"pholcus/runtime/status"
+	"github.com/jason-wj/pholcus/common/config"
+	"github.com/jason-wj/pholcus/runtime/status"
 )
 
 // 配置文件涉及的默认配置。

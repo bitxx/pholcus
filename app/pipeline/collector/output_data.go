@@ -1,7 +1,7 @@
 package collector
 
 import (
-	"pholcus/logs"
+	"github.com/jason-wj/pholcus/logs"
 )
 
 var (

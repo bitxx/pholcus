@@ -2,9 +2,9 @@ package proxy
 
 import (
 	"errors"
+	"github.com/jason-wj/pholcus/common/net/myhttp"
+	"github.com/jason-wj/pholcus/config"
 	"log"
-	"pholcus/common/net/myhttp"
-	"pholcus/config"
 	"regexp"
 	"time"
 )
@@ -90,7 +90,7 @@ func (self *Proxy) ProxyInfo() ([]string, error) {
 		ip = "http://" + ip
 		allProxyIps = append(allProxyIps, ip)
 	}
-	log.Printf(" *     添加新的IP: %s \n", ips)
+	log.Println(" *     当前ip代理数量: ", len(ips))
 
 	return allProxyIps, err
 }

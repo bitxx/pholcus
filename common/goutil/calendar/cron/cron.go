@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"pholcus/common/goutil/calendar"
+	"github.com/jason-wj/pholcus/common/goutil/calendar"
 )
 
 // Cron keeps track of any number of entries, invoking the associated func as

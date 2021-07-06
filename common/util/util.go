@@ -22,7 +22,7 @@ import (
 
 	"golang.org/x/net/html/charset"
 
-	"pholcus/logs"
+	"github.com/jason-wj/pholcus/logs"
 )
 
 const (

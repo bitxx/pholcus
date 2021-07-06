@@ -1,7 +1,7 @@
 package collector
 
 import (
-	"pholcus/logs"
+	"github.com/jason-wj/pholcus/logs"
 )
 
 // 主命名空间相对于数据库名，不依赖具体数据内容，可选

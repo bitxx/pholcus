@@ -2,8 +2,8 @@ package request
 
 import (
 	"encoding/json"
-	"pholcus/common/util"
-	"pholcus/logs"
+	"github.com/jason-wj/pholcus/common/util"
+	"github.com/jason-wj/pholcus/logs"
 	"reflect"
 )
 

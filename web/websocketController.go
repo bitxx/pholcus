@@ -3,13 +3,13 @@ package web
 import (
 	"sync"
 
-	"pholcus/app"
-	"pholcus/app/spider"
-	"pholcus/common/util"
-	ws "pholcus/common/websocket"
-	"pholcus/config"
-	"pholcus/logs"
-	"pholcus/runtime/status"
+	"github.com/jason-wj/pholcus/app"
+	"github.com/jason-wj/pholcus/app/spider"
+	"github.com/jason-wj/pholcus/common/util"
+	ws "github.com/jason-wj/pholcus/common/websocket"
+	"github.com/jason-wj/pholcus/config"
+	"github.com/jason-wj/pholcus/logs"
+	"github.com/jason-wj/pholcus/runtime/status"
 )
 
 type SocketController struct {

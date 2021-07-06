@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"pholcus/common/goutil/coarsetime"
+	"github.com/jason-wj/pholcus/common/goutil/coarsetime"
 )
 
 type (

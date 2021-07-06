@@ -3,7 +3,7 @@ package cron
 import (
 	"time"
 
-	"pholcus/common/goutil/calendar"
+	"github.com/jason-wj/pholcus/common/goutil/calendar"
 )
 
 // SpecSchedule specifies a duty cycle (to the second granularity), based on a

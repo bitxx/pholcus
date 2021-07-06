@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"pholcus/common/goutil/calendar"
+	"github.com/jason-wj/pholcus/common/goutil/calendar"
 )
 
 // Many tests schedule a job for every second, and then wait at most a second

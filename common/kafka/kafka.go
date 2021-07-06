@@ -4,9 +4,9 @@ import (
 	"strings"
 	"sync"
 
-	"pholcus/common/util"
-	"pholcus/config"
-	"pholcus/logs"
+	"github.com/jason-wj/pholcus/common/util"
+	"github.com/jason-wj/pholcus/config"
+	"github.com/jason-wj/pholcus/logs"
 
 	"github.com/Shopify/sarama"
 )

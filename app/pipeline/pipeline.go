@@ -2,9 +2,9 @@
 package pipeline
 
 import (
-	"pholcus/app/pipeline/collector"
-	"pholcus/app/pipeline/collector/data"
-	"pholcus/app/spider"
+	"github.com/jason-wj/pholcus/app/pipeline/collector"
+	"github.com/jason-wj/pholcus/app/pipeline/collector/data"
+	"github.com/jason-wj/pholcus/app/spider"
 )
 
 // 数据收集/输出管道

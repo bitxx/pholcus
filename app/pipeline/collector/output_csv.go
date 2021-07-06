@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"os"
 
-	"pholcus/common/util"
-	"pholcus/config"
-	"pholcus/logs"
-	"pholcus/runtime/cache"
+	"github.com/jason-wj/pholcus/common/util"
+	"github.com/jason-wj/pholcus/config"
+	"github.com/jason-wj/pholcus/logs"
+	"github.com/jason-wj/pholcus/runtime/cache"
 )
 
 /************************ CSV 输出 ***************************/

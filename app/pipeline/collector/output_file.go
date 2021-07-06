@@ -7,12 +7,12 @@ import (
 	"path/filepath"
 	"sync/atomic"
 
-	"pholcus/app/pipeline/collector/data"
-	bytesSize "pholcus/common/bytes"
-	"pholcus/common/util"
-	"pholcus/config"
-	"pholcus/logs"
-	// "pholcus/runtime/cache"
+	"github.com/jason-wj/pholcus/app/pipeline/collector/data"
+	bytesSize "github.com/jason-wj/pholcus/common/bytes"
+	"github.com/jason-wj/pholcus/common/util"
+	"github.com/jason-wj/pholcus/config"
+	"github.com/jason-wj/pholcus/logs"
+	// "github.com/jason-wj/pholcus/runtime/cache"
 )
 
 // 文件输出

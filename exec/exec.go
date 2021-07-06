@@ -7,13 +7,13 @@ import (
 	"strconv"
 	"strings"
 
-	"pholcus/app"
-	"pholcus/cmd"
-	"pholcus/common/gc"
-	"pholcus/config"
-	"pholcus/runtime/cache"
-	"pholcus/runtime/status"
-	"pholcus/web"
+	"github.com/jason-wj/pholcus/app"
+	"github.com/jason-wj/pholcus/cmd"
+	"github.com/jason-wj/pholcus/common/gc"
+	"github.com/jason-wj/pholcus/config"
+	"github.com/jason-wj/pholcus/runtime/cache"
+	"github.com/jason-wj/pholcus/runtime/status"
+	"github.com/jason-wj/pholcus/web"
 )
 
 var (

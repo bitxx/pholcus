@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"pholcus/common/goutil"
+	"github.com/jason-wj/pholcus/common/goutil"
 )
 
 // New returns an error that formats as the given text.

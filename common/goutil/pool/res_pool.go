@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"pholcus/common/goutil/coarsetime"
+	"github.com/jason-wj/pholcus/common/goutil/coarsetime"
 )
 
 // ResPool is a high availability/high concurrent resource pool, which automatically manages the number of resources.

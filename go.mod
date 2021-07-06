@@ -1,4 +1,4 @@
-module pholcus
+module github.com/jason-wj/pholcus
 
 go 1.15
 

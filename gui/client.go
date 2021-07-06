@@ -3,8 +3,8 @@ package gui
 import (
 	. "github.com/lxn/walk/declarative"
 
-	"pholcus/app"
-	"pholcus/config"
+	"github.com/jason-wj/pholcus/app"
+	"github.com/jason-wj/pholcus/config"
 )
 
 func clientWindow() {

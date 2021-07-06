@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"pholcus/common/mahonia"
+	"github.com/jason-wj/pholcus/common/mahonia"
 	"io"
 	"log"
 	"os"

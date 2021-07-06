@@ -2,8 +2,8 @@ package distribute
 
 import (
 	"encoding/json"
-	"pholcus/common/teleport"
-	"pholcus/logs"
+	"github.com/jason-wj/pholcus/common/teleport"
+	"github.com/jason-wj/pholcus/logs"
 )
 
 // 创建主节点API

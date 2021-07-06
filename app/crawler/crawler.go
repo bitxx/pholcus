@@ -6,12 +6,12 @@ import (
 	"runtime"
 	"time"
 
-	"pholcus/app/downloader"
-	"pholcus/app/downloader/request"
-	"pholcus/app/pipeline"
-	"pholcus/app/spider"
-	"pholcus/logs"
-	"pholcus/runtime/cache"
+	"github.com/jason-wj/pholcus/app/downloader"
+	"github.com/jason-wj/pholcus/app/downloader/request"
+	"github.com/jason-wj/pholcus/app/pipeline"
+	"github.com/jason-wj/pholcus/app/spider"
+	"github.com/jason-wj/pholcus/logs"
+	"github.com/jason-wj/pholcus/runtime/cache"
 )
 
 // 采集引擎

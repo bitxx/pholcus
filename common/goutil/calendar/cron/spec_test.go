@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"pholcus/common/goutil/calendar"
+	"github.com/jason-wj/pholcus/common/goutil/calendar"
 )
 
 func TestActivation(t *testing.T) {

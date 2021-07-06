@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/mgo.v2/bson"
 
-	"pholcus/common/pool"
+	"github.com/jason-wj/pholcus/common/pool"
 )
 
 // 更新第一个匹配的数据，若无匹配项则插入
