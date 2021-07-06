@@ -3,11 +3,10 @@ package proxy
 import (
 	"errors"
 	"github.com/jason-wj/pholcus/common/net/myhttp"
+	"github.com/jason-wj/pholcus/config"
 	"log"
 	"regexp"
 	"time"
-
-	"github.com/jason-wj/pholcus/config"
 )
 
 /**
@@ -15,12 +14,14 @@ import (
  */
 
 var (
-	proxyHttp *myhttp.HttpSend
-	allProxyIps       []string
+	proxyHttp   *myhttp.HttpSend
+	allProxyIps []string
 )
 
+/*
+//全网代理IP，http://www.goubanjia.com/
+//业务体验不好，暂时不用
 const MaxIpSize = 7
-
 func (self *Proxy) ProxyInfo() ([]string,error) {
 	//每3秒钟请求一次
 	if time.Now().Unix()%3 != 0 {
@@ -56,4 +57,40 @@ func (self *Proxy) ProxyInfo() ([]string,error) {
 	log.Printf(" *     添加新的IP: %s \n", res)
 
 	return allProxyIps,err
+}*/
+
+// ProxyInfo
+/** ProxyInfo
+ * @Description: 快代理调用策略，快代理官网：https://www.kuaidaili.com/
+ * @receiver self
+ * @return []string
+ * @return error
+ */
+func (self *Proxy) ProxyInfo() ([]string, error) {
+	//每3秒钟请求一次
+	if time.Now().Unix()%3 != 0 {
+		return nil, nil
+	}
+	if proxyHttp == nil {
+		proxyHttp = myhttp.NewHttpSend(config.PROXY)
+	}
+	proxyData, err := proxyHttp.Get()
+	if err != nil {
+		return nil, err
+	}
+	reg := regexp.MustCompile(`\d{1,3}([.]\d{1,3}){3}:\d{2,5}`)
+	ips := reg.FindAllString(string(proxyData), -1)
+	if len(ips) <= 0 {
+		return nil, errors.New(string(proxyData))
+	}
+
+	allProxyIps = []string{}
+
+	for _, ip := range ips {
+		ip = "http://" + ip
+		allProxyIps = append(allProxyIps, ip)
+	}
+	log.Printf(" *     添加新的IP: %s \n", ips)
+
+	return allProxyIps, err
 }
