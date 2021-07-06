@@ -16,7 +16,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/jason-wj/pholcus/common/goutil/graceful"
+	"pholcus/common/goutil/graceful"
 )
 
 // Listen announces on the local network address laddr. The network net must be

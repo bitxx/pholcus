@@ -2,12 +2,12 @@ package pholcus_lib
 
 // 基础包
 import (
-	"github.com/jason-wj/pholcus/app/downloader/request" //必需
-	"github.com/jason-wj/pholcus/common/goquery"         //DOM解析
-	//"github.com/jason-wj/pholcus/logs"               //信息输出
-	. "github.com/jason-wj/pholcus/app/spider" //必需
-	// . "github.com/jason-wj/pholcus/app/spider/common"          //选用
-	//"github.com/jason-wj/pholcus/logs/logs"
+	"pholcus/app/downloader/request" //必需
+	"pholcus/common/goquery"         //DOM解析
+	//"pholcus/logs"               //信息输出
+	. "pholcus/app/spider" //必需
+	// . "pholcus/app/spider/common"          //选用
+	//"pholcus/logs/logs"
 	// 字符串处理包
 	// "regexp"
 	//"strconv"
@@ -18,7 +18,7 @@ import (
 	// "time"
 	//"strings"
 	//"strings"
-	"github.com/jason-wj/pholcus/logs"
+	"pholcus/logs"
 	"strconv"
 	"strings"
 )

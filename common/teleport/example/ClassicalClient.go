@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/jason-wj/pholcus/common/teleport"
+	"pholcus/common/teleport"
 	"log"
 	"sync"
 	"time"

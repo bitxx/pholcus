@@ -4,10 +4,10 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/jason-wj/pholcus/common/goquery"
+	"pholcus/common/goquery"
 
-	"github.com/jason-wj/pholcus/app/downloader/request"
-	. "github.com/jason-wj/pholcus/app/spider"
+	"pholcus/app/downloader/request"
+	. "pholcus/app/spider"
 )
 
 // Form is the default form element.

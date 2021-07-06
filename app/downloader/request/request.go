@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jason-wj/pholcus/common/util"
+	"pholcus/common/util"
 )
 
 // Request represents object waiting for being crawled.

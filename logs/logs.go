@@ -6,8 +6,8 @@ import (
 	"os"
 	"path"
 
-	"github.com/jason-wj/pholcus/config"
-	"github.com/jason-wj/pholcus/logs/logs"
+	"pholcus/config"
+	"pholcus/logs/logs"
 )
 
 type (

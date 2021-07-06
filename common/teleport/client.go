@@ -1,7 +1,7 @@
 package teleport
 
 import (
-	"github.com/jason-wj/pholcus/common/teleport/debug"
+	"pholcus/common/teleport/debug"
 	"log"
 	"net"
 	"time"

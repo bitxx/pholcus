@@ -25,7 +25,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jason-wj/pholcus/app/downloader/surfer/agent"
+	"pholcus/app/downloader/surfer/agent"
 )
 
 type Param struct {

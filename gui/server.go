@@ -6,9 +6,9 @@ import (
 	"github.com/lxn/walk"
 	. "github.com/lxn/walk/declarative"
 
-	"github.com/jason-wj/pholcus/app"
-	"github.com/jason-wj/pholcus/config"
-	"github.com/jason-wj/pholcus/logs"
+	"pholcus/app"
+	"pholcus/config"
+	"pholcus/logs"
 )
 
 var serverCount int

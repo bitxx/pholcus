@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jason-wj/pholcus/common/util"
-	"github.com/jason-wj/pholcus/common/xlsx"
-	"github.com/jason-wj/pholcus/config"
-	"github.com/jason-wj/pholcus/logs"
-	"github.com/jason-wj/pholcus/runtime/cache"
+	"pholcus/common/util"
+	"pholcus/common/xlsx"
+	"pholcus/config"
+	"pholcus/logs"
+	"pholcus/runtime/cache"
 )
 
 /************************ excel 输出 ***************************/

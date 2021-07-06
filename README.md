@@ -21,9 +21,6 @@
 
 ## 以下历史记录，部分可供参考
 
-## 使用
-需要将项目放在$GOPATH/github.com/jason-wj/目录中
-
 ## 使用技巧
 1. 每个链接的请求，最好设置一下链接`DialTimeout`和`ConnTimeout`，默认框架提供的是2分钟，这个大批量爬取时候，这个时间影响还是很大的，我控制在15秒左右。
 2. 使用代理，结合上面的方式是最佳选择
@@ -100,7 +97,7 @@ if err != nil {
 }
 ```
 
-9. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://github.com/jason-wj/pholcus/common/goutil)两个辅助源码直接放在`/pholcus/common`目录中
+9. 将[henrylee2cn/teleport](https://github.com/henrylee2cn/teleport)和[henrylee2cn/goutil](https://pholcus/common/goutil)两个辅助源码直接放在`/pholcus/common`目录中
 
 10. 加入爬虫规则示例包到项目根目录
 
