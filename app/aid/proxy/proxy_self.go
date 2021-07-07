@@ -6,7 +6,6 @@ import (
 	"github.com/jason-wj/pholcus/config"
 	"log"
 	"regexp"
-	"time"
 )
 
 /**
@@ -67,10 +66,6 @@ func (self *Proxy) ProxyInfo() ([]string,error) {
  * @return error
  */
 func (self *Proxy) ProxyInfo() ([]string, error) {
-	//每3秒钟请求一次
-	if time.Now().Unix()%3 != 0 {
-		return nil, nil
-	}
 	if proxyHttp == nil {
 		proxyHttp = myhttp.NewHttpSend(config.PROXY)
 	}
