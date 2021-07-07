@@ -282,7 +282,7 @@ func tplData(mode int) map[string]interface{} {
 
 	// 代理IP更换的间隔秒钟数
 	info["ProxySecond"] = map[string][]int64{
-		"menu": {0, 1, 3, 5, 10, 15, 20, 30, 45, 60, 120, 180},
+		"menu": {0, 1, 3, 5, 10, 15, 20, 30, 45, 60, 120, 180, 240, 270, 300},
 		"curr": []int64{app.LogicApp.GetAppConf("ProxySecond").(int64)},
 	}
 
