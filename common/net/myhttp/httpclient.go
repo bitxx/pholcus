@@ -187,11 +187,11 @@ func (h *HttpSend) sendWithProxy(method, scheme, host string) ([]byte, error) {
 				Host:   host}, nil
 		},
 		Dial: (&net.Dialer{
-			Timeout: 10 * time.Second,
+			Timeout: 1 * time.Second,
 		}).Dial,
 	}
 
-	client.Timeout = time.Duration(10 * time.Second)
+	client.Timeout = time.Duration(1 * time.Second)
 
 	req, err = http.NewRequest(method, h.Link, strings.NewReader(sendData))
 	if err != nil {

@@ -16,11 +16,11 @@ var (
 	proxyHttp   *myhttp.HttpSend
 	allProxyIps []string
 )
-
+const MaxIpSize = 3
 /*
 //全网代理IP，http://www.goubanjia.com/
 //业务体验不好，暂时不用
-const MaxIpSize = 7
+
 func (self *Proxy) ProxyInfo() ([]string,error) {
 	//每3秒钟请求一次
 	if time.Now().Unix()%3 != 0 {
@@ -79,13 +79,29 @@ func (self *Proxy) ProxyInfo() ([]string, error) {
 		return nil, errors.New(string(proxyData))
 	}
 
-	allProxyIps = []string{}
-
+	proxyTest := myhttp.NewHttpSend("http://www.baidu.com/")
 	for _, ip := range ips {
+		_,err := proxyTest.GetWithProxy("http",ip)
+		if err!=nil{
+			continue
+		}
 		ip = "http://" + ip
-		allProxyIps = append(allProxyIps, ip)
+
+		if len(allProxyIps) > MaxIpSize {
+			allProxyIps = allProxyIps[len(allProxyIps)-MaxIpSize : len(allProxyIps)-1]
+		}
+		has := false
+		for _, ipTmp := range allProxyIps {
+			if ipTmp == ip {
+				has = true
+				break
+			}
+		}
+		if !has {
+			allProxyIps = append(allProxyIps, ip)
+		}
 	}
-	log.Println(" *     当前ip代理数量: ", len(ips))
+	log.Println(" *     当前ip代理数量: ", len(allProxyIps))
 
 	return allProxyIps, err
 }
