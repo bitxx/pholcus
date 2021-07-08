@@ -1,22 +1,14 @@
 package proxy
 
-import (
-	"errors"
-	"github.com/jason-wj/pholcus/common/net/myhttp"
-	"github.com/jason-wj/pholcus/config"
-	"log"
-	"regexp"
-)
-
 /**
  * 自定义获取代理ip，将获取到的ip存储到allProxyIps中
  */
 
-var (
+/*var (
 	proxyHttp   *myhttp.HttpSend
 	allProxyIps []string
 )
-const MaxIpSize = 5
+const MaxIpSize = 5*/
 /*
 //全网代理IP，http://www.goubanjia.com/
 //业务体验不好，暂时不用
@@ -65,7 +57,7 @@ func (self *Proxy) ProxyInfo() ([]string,error) {
  * @return []string
  * @return error
  */
-func (self *Proxy) ProxyInfo() ([]string, error) {
+/*func (self *Proxy) ProxyInfo() ([]string, error) {
 	if proxyHttp == nil {
 		proxyHttp = myhttp.NewHttpSend(config.PROXY)
 	}
@@ -104,4 +96,4 @@ func (self *Proxy) ProxyInfo() ([]string, error) {
 	log.Println(" *     当前ip代理数量: ", len(allProxyIps))
 
 	return allProxyIps, err
-}
+}*/
