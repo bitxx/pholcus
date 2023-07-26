@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/jason-wj/pholcus/common/teleport"
-	"github.com/jason-wj/pholcus/common/teleport/debug"
+	"github.com/bitxx/pholcus/common/teleport"
+	"github.com/bitxx/pholcus/common/teleport/debug"
 	// "log"
 	// "time"
 )

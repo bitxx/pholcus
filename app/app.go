@@ -10,16 +10,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jason-wj/pholcus/app/crawler"
-	"github.com/jason-wj/pholcus/app/distribute"
-	"github.com/jason-wj/pholcus/app/pipeline"
-	"github.com/jason-wj/pholcus/app/pipeline/collector"
-	"github.com/jason-wj/pholcus/app/scheduler"
-	"github.com/jason-wj/pholcus/app/spider"
-	"github.com/jason-wj/pholcus/common/teleport"
-	"github.com/jason-wj/pholcus/logs"
-	"github.com/jason-wj/pholcus/runtime/cache"
-	"github.com/jason-wj/pholcus/runtime/status"
+	"github.com/bitxx/pholcus/app/crawler"
+	"github.com/bitxx/pholcus/app/distribute"
+	"github.com/bitxx/pholcus/app/pipeline"
+	"github.com/bitxx/pholcus/app/pipeline/collector"
+	"github.com/bitxx/pholcus/app/scheduler"
+	"github.com/bitxx/pholcus/app/spider"
+	"github.com/bitxx/pholcus/common/teleport"
+	"github.com/bitxx/pholcus/logs"
+	"github.com/bitxx/pholcus/runtime/cache"
+	"github.com/bitxx/pholcus/runtime/status"
 )
 
 type (

@@ -5,11 +5,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jason-wj/pholcus/app/downloader/request"
-	"github.com/jason-wj/pholcus/app/scheduler"
-	"github.com/jason-wj/pholcus/common/util"
-	"github.com/jason-wj/pholcus/logs"
-	"github.com/jason-wj/pholcus/runtime/status"
+	"github.com/bitxx/pholcus/app/downloader/request"
+	"github.com/bitxx/pholcus/app/scheduler"
+	"github.com/bitxx/pholcus/common/util"
+	"github.com/bitxx/pholcus/logs"
+	"github.com/bitxx/pholcus/runtime/status"
 )
 
 const (

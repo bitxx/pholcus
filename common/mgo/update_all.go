@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/jason-wj/pholcus/common/pool"
+	"github.com/bitxx/pholcus/common/pool"
 )
 
 // 更新全部匹配的数据

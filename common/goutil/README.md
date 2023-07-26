@@ -33,7 +33,7 @@ A bit set.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/bitset"
+    "github.com/bitxx/pholcus/common/goutil/bitset"
     ```
 
 - New creates a bit set object.
@@ -181,7 +181,7 @@ Exec cmd and catch the result.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/cmder"
+    "github.com/bitxx/pholcus/common/goutil/cmder"
     ```
 
 - Run exec cmd and catch the result.
@@ -199,7 +199,7 @@ The current time truncated to the nearest second.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/coarsetime"
+    "github.com/bitxx/pholcus/common/goutil/coarsetime"
     ```
 
 - FloorTimeNow returns the current time from the range (now-100ms,now].
@@ -223,7 +223,7 @@ Errors is improved errors package.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/errors"
+    "github.com/bitxx/pholcus/common/goutil/errors"
     ```
 
 - New returns an error that formats as the given text.
@@ -257,7 +257,7 @@ Shutdown or reboot current process gracefully.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/graceful"
+    "github.com/bitxx/pholcus/common/goutil/graceful"
     ```
 
 - GraceSignal open graceful shutdown or reboot signal.
@@ -323,7 +323,7 @@ GoPool is a Goroutines pool. It can control concurrent numbers, reuse goroutines
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/pool"
+    "github.com/bitxx/pholcus/common/goutil/pool"
     ```
 
 - GoPool executes concurrently incoming function via a pool of goroutines in
@@ -373,7 +373,7 @@ HTTP body builder.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/httpbody"
+    "github.com/bitxx/pholcus/common/goutil/httpbody"
     ```
 
 - NewFormBody returns form request content type and body reader.
@@ -420,7 +420,7 @@ So it is similar to database/sql's db pool.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/pool"
+    "github.com/bitxx/pholcus/common/goutil/pool"
     ```
 
 - ResPool is a pool of zero or more underlying avatar(resource).
@@ -587,7 +587,7 @@ Performance:
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/pool"
+    "github.com/bitxx/pholcus/common/goutil/pool"
     ```
 
 - Type definition
@@ -655,7 +655,7 @@ Password check password.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil/password"
+    "github.com/bitxx/pholcus/common/goutil/password"
     ```
 
 - CheckPassword checks if the password matches the format requirements.
@@ -671,7 +671,7 @@ Various small functions.
 - import it
 
     ```go
-    "github.com/jason-wj/pholcus/common/goutil"
+    "github.com/bitxx/pholcus/common/goutil"
     ```
 
 - BytesToString convert []byte type to string type.

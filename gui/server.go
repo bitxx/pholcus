@@ -3,12 +3,10 @@ package gui
 import (
 	"strconv"
 
+	"github.com/bitxx/pholcus/app"
+	"github.com/bitxx/pholcus/config"
+	"github.com/bitxx/pholcus/logs"
 	"github.com/lxn/walk"
-	. "github.com/lxn/walk/declarative"
-
-	"github.com/jason-wj/pholcus/app"
-	"github.com/jason-wj/pholcus/config"
-	"github.com/jason-wj/pholcus/logs"
 )
 
 var serverCount int

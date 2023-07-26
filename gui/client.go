@@ -1,10 +1,8 @@
 package gui
 
 import (
-	. "github.com/lxn/walk/declarative"
-
-	"github.com/jason-wj/pholcus/app"
-	"github.com/jason-wj/pholcus/config"
+	"github.com/bitxx/pholcus/app"
+	"github.com/bitxx/pholcus/config"
 )
 
 func clientWindow() {
@@ -16,9 +14,9 @@ func clientWindow() {
 			DataSource:     Input,
 			ErrorPresenter: ErrorPresenterRef{&ep},
 		},
-		Title:    config.FULL_NAME + "                                                          【 运行模式 -> 客户端 】",
-		MinSize:  Size{1100, 600},
-		Layout:   VBox{MarginsZero: true},
+		Title:   config.FULL_NAME + "                                                          【 运行模式 -> 客户端 】",
+		MinSize: Size{1100, 600},
+		Layout:  VBox{MarginsZero: true},
 		Children: []Widget{
 			// Composite{
 			// 	Layout:  HBox{},

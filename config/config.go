@@ -3,8 +3,8 @@ package config
 import (
 	"strings"
 
-	"github.com/jason-wj/pholcus/logs/logs"
-	"github.com/jason-wj/pholcus/runtime/cache"
+	"github.com/bitxx/pholcus/logs/logs"
+	"github.com/bitxx/pholcus/runtime/cache"
 )
 
 // 软件信息。

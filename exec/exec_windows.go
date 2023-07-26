@@ -1,4 +1,6 @@
+//go:build windows
 // +build windows
+
 package exec
 
 import (
@@ -6,11 +8,11 @@ import (
 	"os/exec"
 	"os/signal"
 
-	"github.com/jason-wj/pholcus/config"
+	"github.com/bitxx/pholcus/config"
 
-	"github.com/jason-wj/pholcus/cmd" // cmd版
-	"github.com/jason-wj/pholcus/gui" // gui版
-	"github.com/jason-wj/pholcus/web" // web版
+	"github.com/bitxx/pholcus/cmd" // cmd版
+	"github.com/bitxx/pholcus/gui" // gui版
+	"github.com/bitxx/pholcus/web" // web版
 )
 
 func run(which string) {

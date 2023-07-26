@@ -8,9 +8,9 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 
-	"github.com/jason-wj/pholcus/common/util"
-	"github.com/jason-wj/pholcus/config"
-	"github.com/jason-wj/pholcus/logs"
+	"github.com/bitxx/pholcus/common/util"
+	"github.com/bitxx/pholcus/config"
+	"github.com/bitxx/pholcus/logs"
 )
 
 /************************ Mysql 输出 ***************************/
@@ -64,13 +64,13 @@ func (m *MyTable) Clone() *MyTable {
 	}
 }
 
-//设置表名
+// 设置表名
 func (self *MyTable) SetTableName(name string) *MyTable {
 	self.tableName = wrapSqlKey(name)
 	return self
 }
 
-//设置表单列
+// 设置表单列
 func (self *MyTable) AddColumn(names ...string) *MyTable {
 	for _, name := range names {
 		name = strings.Trim(name, " ")
@@ -80,14 +80,14 @@ func (self *MyTable) AddColumn(names ...string) *MyTable {
 	return self
 }
 
-//设置主键的语句（可选）
+// 设置主键的语句（可选）
 func (self *MyTable) CustomPrimaryKey(primaryKeyCode string) *MyTable {
 	self.AddColumn(primaryKeyCode)
 	self.customPrimaryKey = true
 	return self
 }
 
-//生成"创建表单"的语句，执行前须保证SetTableName()、AddColumn()已经执行
+// 生成"创建表单"的语句，执行前须保证SetTableName()、AddColumn()已经执行
 func (self *MyTable) Create() error {
 	if len(self.columnNames) == 0 {
 		return errors.New("Column can not be empty")
@@ -114,7 +114,7 @@ func (self *MyTable) Create() error {
 	return err
 }
 
-//清空表单，执行前须保证SetTableName()已经执行
+// 清空表单，执行前须保证SetTableName()已经执行
 func (self *MyTable) Truncate() error {
 	maxConnChan <- true
 	defer func() {
@@ -124,7 +124,7 @@ func (self *MyTable) Truncate() error {
 	return err
 }
 
-//设置插入的1行数据
+// 设置插入的1行数据
 func (self *MyTable) addRow(value []string) *MyTable {
 	for i, count := 0, len(value); i < count; i++ {
 		self.args = append(self.args, value[i])
@@ -133,7 +133,7 @@ func (self *MyTable) addRow(value []string) *MyTable {
 	return self
 }
 
-//智能插入数据，每次1行
+// 智能插入数据，每次1行
 func (self *MyTable) AutoInsert(value []string) *MyTable {
 	if self.rowsCount > 100 {
 		util.CheckErr(self.FlushInsert())
@@ -155,7 +155,7 @@ func (self *MyTable) AutoInsert(value []string) *MyTable {
 	return self.addRow(value)
 }
 
-//向sqlCode添加"插入数据"的语句，执行前须保证Create()、AutoInsert()已经执行
+// 向sqlCode添加"插入数据"的语句，执行前须保证Create()、AutoInsert()已经执行
 func (self *MyTable) FlushInsert() error {
 	if self.rowsCount == 0 {
 		return nil

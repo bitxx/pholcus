@@ -1,7 +1,7 @@
 package proxy
 
 import (
-	"github.com/jason-wj/pholcus/config"
+	"github.com/bitxx/pholcus/config"
 	"io/ioutil"
 	"log"
 	"os"
@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-//author: 代理模块基本重构 wj
+// author: 代理模块基本重构 wj
 type Proxy struct {
 	proxyIPTypeRegexp *regexp.Regexp
 	allProxyIps       []string

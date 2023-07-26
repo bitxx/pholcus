@@ -16,7 +16,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/jason-wj/pholcus/common/goutil/graceful"
+	"github.com/bitxx/pholcus/common/goutil/graceful"
 )
 
 // Listen announces on the local network address laddr. The network net must be
@@ -48,8 +48,9 @@ func Append(ln net.Listener) error {
 
 // SetInherited adds the files and envs to be inherited by the new process.
 // Notes:
-//  Only for reboot!
-//  Windows system are not supported!
+//
+//	Only for reboot!
+//	Windows system are not supported!
 func SetInherited() error {
 	return globalInheritNet.SetInherited()
 }
@@ -269,8 +270,9 @@ func isSameAddr(a1, a2 net.Addr) bool {
 
 // SetInherited adds the files and envs to be inherited by the new process.
 // Notes:
-//  Only for reboot!
-//  Windows system are not supported!
+//
+//	Only for reboot!
+//	Windows system are not supported!
 func (n *inheritNet) SetInherited() error {
 	listeners, err := n.activeListeners()
 	if err != nil {

@@ -9,7 +9,7 @@ import (
 
 	"github.com/lxn/walk"
 
-	"github.com/jason-wj/pholcus/app/spider"
+	"github.com/bitxx/pholcus/app/spider"
 )
 
 type (
@@ -91,7 +91,7 @@ func (m *SpiderMenu) SetChecked(row int, checked bool) error {
 	return nil
 }
 
-//获取被选中的结果
+// 获取被选中的结果
 func (m *SpiderMenu) GetChecked() []*GUISpider {
 	rc := []*GUISpider{}
 	for idx, item := range m.items {

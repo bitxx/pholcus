@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jason-wj/pholcus/common/goquery"
-	"github.com/jason-wj/pholcus/common/mahonia"
-	"github.com/jason-wj/pholcus/common/ping"
+	"github.com/bitxx/pholcus/common/goquery"
+	"github.com/bitxx/pholcus/common/mahonia"
+	"github.com/bitxx/pholcus/common/ping"
 )
 
 // 清除标签
@@ -156,7 +156,7 @@ func GBKToUTF8(src string) string {
 	return DecodeString(src, "GB18030")
 }
 
-//将"&#21654;&#21857;&#33394;&#124;&#32511;&#33394;"转为"咖啡色|绿色"
+// 将"&#21654;&#21857;&#33394;&#124;&#32511;&#33394;"转为"咖啡色|绿色"
 func UnicodeToUTF8(str string) string {
 	str = strings.TrimLeft(str, "&#")
 	str = strings.TrimRight(str, ";")
@@ -170,7 +170,7 @@ func UnicodeToUTF8(str string) string {
 	return strings.Join(strSlice, "")
 }
 
-//将`{"area":[["quanguo","\u5168\u56fd\u8054\u9500"]]｝`转为`{"area":[["quanguo","全国联销"]]｝`
+// 将`{"area":[["quanguo","\u5168\u56fd\u8054\u9500"]]｝`转为`{"area":[["quanguo","全国联销"]]｝`
 func Unicode16ToUTF8(str string) string {
 	i := 0
 	if strings.Index(str, `\u`) > 0 {
@@ -190,8 +190,8 @@ func Unicode16ToUTF8(str string) string {
 	return strings.Join(strSlice, "")
 }
 
-//@SchemeAndHost https://www.baidu.com
-//@path /search?w=x
+// @SchemeAndHost https://www.baidu.com
+// @path /search?w=x
 func MakeUrl(path string, schemeAndHost ...string) (string, bool) {
 	if string(path[0]) != "/" && strings.ToLower(string(path[0])) != "h" {
 		path = "/" + path
@@ -220,11 +220,11 @@ func Ping(address string, timeoutSecond int) (alive bool, err error, timedelay t
 	return ping.Ping(address, timeoutSecond)
 }
 
-//html过滤注释
-//var htmlReg = regexp.MustCompile(`(<!--(.)*-->)|([\s\v]+/*([^(/\*)]|[^(\*/)])*\*/)|([\t\n\f\r\v\v]+[#|//][^\t\n\f\r\v]+)`) //|([\r|\f|\t|\n|\v])
+// html过滤注释
+// var htmlReg = regexp.MustCompile(`(<!--(.)*-->)|([\s\v]+/*([^(/\*)]|[^(\*/)])*\*/)|([\t\n\f\r\v\v]+[#|//][^\t\n\f\r\v]+)`) //|([\r|\f|\t|\n|\v])
 var htmlReg = regexp.MustCompile(`(\*{1,2}[\s\S]*?\*)|(<!-[\s\S]*?-->)|(^\s*\n)`) //(//[\s\S]*?\n)|
 
-//处理html文件--add by lyken 20160512
+// 处理html文件--add by lyken 20160512
 func ProcessHtml(html string) string {
 	//去除注释
 	html = htmlReg.ReplaceAllString(html, "")
@@ -242,7 +242,7 @@ func ProcessHtml(html string) string {
 	return html
 }
 
-//清除换行--add by lyken 20160512
+// 清除换行--add by lyken 20160512
 func DepriveBreak(s string) string {
 	s = strings.Replace(s, "\n", "", -1)
 	s = strings.Replace(s, "\r", "", -1)
@@ -253,14 +253,14 @@ func DepriveBreak(s string) string {
 	return s
 }
 
-//多余的换行--add by lyken 20160819
+// 多余的换行--add by lyken 20160819
 func DepriveMutiBreak(s string) string {
 	re, _ := regexp.Compile(`([^\n\f\r\t 　 ]*)([ 　 ]*[\n\f\r\t]+[ 　 ]*)+`)
 	return re.ReplaceAllString(s, "${1}\n")
 
 }
 
-//在原有网址上添加参数--add by lyken 20160901
+// 在原有网址上添加参数--add by lyken 20160901
 func HrefSub(src string, sub string) string {
 	if len(sub) > 0 {
 		if strings.Index(src, "?") > -1 {
@@ -272,10 +272,10 @@ func HrefSub(src string, sub string) string {
 	return src
 }
 
-//域名获取 Reg
+// 域名获取 Reg
 var domainReg = regexp.MustCompile(`([a-zA-Z0-9]+://([a-zA-Z0-9\:\_\-\.])+(/)?)(.)*`)
 
-//网址组合--add by lyken 20160512
+// 网址组合--add by lyken 20160512
 func GetHerf(baseurl string, url string, herf string, mustBase bool) string {
 	if strings.HasPrefix(herf, `javascript:`) {
 		return ``

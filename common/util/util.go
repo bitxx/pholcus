@@ -22,7 +22,7 @@ import (
 
 	"golang.org/x/net/html/charset"
 
-	"github.com/jason-wj/pholcus/logs"
+	"github.com/bitxx/pholcus/logs"
 )
 
 const (
@@ -270,7 +270,7 @@ func XML2mapstr(xmldoc string) map[string]string {
 	return m
 }
 
-//string to hash
+// string to hash
 func MakeHash(s string) string {
 	const IEEE = 0xedb88320
 	var IEEETable = crc32.MakeTable(IEEE)
@@ -313,7 +313,7 @@ func JsonString(obj interface{}) string {
 	return r
 }
 
-//检查并打印错误
+// 检查并打印错误
 func CheckErr(err error) {
 	if err != nil {
 		logs.Log.Error("%v", err)
@@ -362,7 +362,6 @@ func FileNameReplace(fileName string) string {
 }
 
 // 将Excel工作表名中非法字符替换为下划线
-//
 func ExcelSheetNameReplace(fileName string) string {
 	r := []rune(fileName)
 	size := len(r)

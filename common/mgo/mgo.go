@@ -6,9 +6,9 @@ import (
 
 	mgo "gopkg.in/mgo.v2"
 
-	"github.com/jason-wj/pholcus/common/pool"
-	"github.com/jason-wj/pholcus/config"
-	"github.com/jason-wj/pholcus/logs"
+	"github.com/bitxx/pholcus/common/pool"
+	"github.com/bitxx/pholcus/config"
+	"github.com/bitxx/pholcus/logs"
 )
 
 type MgoSrc struct {
@@ -41,7 +41,7 @@ func Refresh() {
 	} else if err = session.Ping(); err != nil {
 		logs.Log.Error("MongoDB：%v\n", err)
 	} else {
-		if config.MGO_ADMIN_USERNAME!=""{
+		if config.MGO_ADMIN_USERNAME != "" {
 			myDB := session.DB("admin")
 			err = myDB.Login(config.MGO_ADMIN_USERNAME, config.MGO_ADMIN_PASSWORD)
 			if err != nil {

@@ -3,7 +3,7 @@ package teleport
 
 import (
 	"encoding/json"
-	"github.com/jason-wj/pholcus/common/teleport/debug"
+	"github.com/bitxx/pholcus/common/teleport/debug"
 	"log"
 	"time"
 )

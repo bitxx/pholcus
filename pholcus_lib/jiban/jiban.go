@@ -1,9 +1,8 @@
 package pholcus_lib
 
 import (
-	"github.com/jason-wj/pholcus/app/downloader/request"
-	. "github.com/jason-wj/pholcus/app/spider" //必需
-	"github.com/jason-wj/pholcus/common/goquery"
+	"github.com/bitxx/pholcus/app/downloader/request"
+	"github.com/bitxx/pholcus/common/goquery"
 	// net包
 	//	"net/http" //设置http.Header
 	// "net/url"

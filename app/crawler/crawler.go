@@ -6,12 +6,12 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/jason-wj/pholcus/app/downloader"
-	"github.com/jason-wj/pholcus/app/downloader/request"
-	"github.com/jason-wj/pholcus/app/pipeline"
-	"github.com/jason-wj/pholcus/app/spider"
-	"github.com/jason-wj/pholcus/logs"
-	"github.com/jason-wj/pholcus/runtime/cache"
+	"github.com/bitxx/pholcus/app/downloader"
+	"github.com/bitxx/pholcus/app/downloader/request"
+	"github.com/bitxx/pholcus/app/pipeline"
+	"github.com/bitxx/pholcus/app/spider"
+	"github.com/bitxx/pholcus/logs"
+	"github.com/bitxx/pholcus/runtime/cache"
 )
 
 // 采集引擎
@@ -52,7 +52,7 @@ func (self *crawler) Init(sp *spider.Spider) Crawler {
 	return self
 }
 
-//用于动态设置暂停时间
+// 用于动态设置暂停时间
 func (self *crawler) setPauseTime() {
 	self.pause[0] = self.Pausetime / 2
 	if self.pause[0] > 0 {
@@ -236,12 +236,12 @@ func (self *crawler) GetOne() *request.Request {
 	return self.Spider.RequestPull()
 }
 
-//从调度使用一个资源空位
+// 从调度使用一个资源空位
 func (self *crawler) UseOne() {
 	self.Spider.RequestUse()
 }
 
-//从调度释放一个资源空位
+// 从调度释放一个资源空位
 func (self *crawler) FreeOne() {
 	self.Spider.RequestFree()
 }

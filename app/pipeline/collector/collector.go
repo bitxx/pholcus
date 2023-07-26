@@ -7,9 +7,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/jason-wj/pholcus/app/pipeline/collector/data"
-	"github.com/jason-wj/pholcus/app/spider"
-	"github.com/jason-wj/pholcus/runtime/cache"
+	"github.com/bitxx/pholcus/app/pipeline/collector/data"
+	"github.com/bitxx/pholcus/app/spider"
+	"github.com/bitxx/pholcus/runtime/cache"
 )
 
 // 结果收集与输出

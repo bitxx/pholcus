@@ -6,33 +6,33 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/jason-wj/pholcus/common/config"
-	"github.com/jason-wj/pholcus/runtime/status"
+	"github.com/bitxx/pholcus/common/config"
+	"github.com/bitxx/pholcus/runtime/status"
 )
 
 // 配置文件涉及的默认配置。
 const (
 	crawlcap int = 50 // 蜘蛛池最大容量
 	// datachancap             int    = 2 << 14                     // 收集器容量(默认65536)
-	logcap                int64  = 10000                       // 日志缓存的容量
-	loglevel              string = "debug"                     // 全局日志打印级别（亦是日志文件输出级别）
-	logconsolelevel       string = "info"                      // 日志在控制台的显示级别
-	logfeedbacklevel      string = "error"                     // 客户端反馈至服务端的日志级别
-	loglineinfo           bool   = false                       // 日志是否打印行信息
-	logsave               bool   = true                        // 是否保存所有日志到本地文件
-	phantomjs             string = WORK_ROOT + "/phantomjs"    // phantomjs文件路径
-	proxylib              string = "需手动输入，当前仅支持http://www.goubanjia.com/提供的链接"    // 代理ip商提供的地址
-	spiderdir             string = WORK_ROOT + "/spiders"      // 动态规则目录
-	fileoutdir            string = WORK_ROOT + "/file_out"     // 文件（图片、HTML等）结果的输出目录
-	textoutdir            string = WORK_ROOT + "/text_out"     // excel或csv输出方式下，文本结果的输出目录
-	dbname                string = TAG                         // 数据库名称
-	mgoconnstring         string = "127.0.0.1:27017"           // mongodb连接字符串
-	mgoconncap            int    = 1024                        // mongodb连接池容量
-	mgoconngcsecond       int64  = 600                         // mongodb连接池GC时间，单位秒
-	mysqlconnstring       string = "root:@tcp(127.0.0.1:3306)" // mysql连接字符串
-	mysqlconncap          int    = 2048                        // mysql连接池容量
-	mysqlmaxallowedpacket int    = 1048576                     //mysql通信缓冲区的最大长度，单位B，默认1MB
-	kafkabrokers          string = "127.0.0.1:9092"            //kafka broker字符串,逗号分割
+	logcap                int64  = 10000                                       // 日志缓存的容量
+	loglevel              string = "debug"                                     // 全局日志打印级别（亦是日志文件输出级别）
+	logconsolelevel       string = "info"                                      // 日志在控制台的显示级别
+	logfeedbacklevel      string = "error"                                     // 客户端反馈至服务端的日志级别
+	loglineinfo           bool   = false                                       // 日志是否打印行信息
+	logsave               bool   = true                                        // 是否保存所有日志到本地文件
+	phantomjs             string = WORK_ROOT + "/phantomjs"                    // phantomjs文件路径
+	proxylib              string = "需手动输入，当前仅支持http://www.goubanjia.com/提供的链接" // 代理ip商提供的地址
+	spiderdir             string = WORK_ROOT + "/spiders"                      // 动态规则目录
+	fileoutdir            string = WORK_ROOT + "/file_out"                     // 文件（图片、HTML等）结果的输出目录
+	textoutdir            string = WORK_ROOT + "/text_out"                     // excel或csv输出方式下，文本结果的输出目录
+	dbname                string = TAG                                         // 数据库名称
+	mgoconnstring         string = "127.0.0.1:27017"                           // mongodb连接字符串
+	mgoconncap            int    = 1024                                        // mongodb连接池容量
+	mgoconngcsecond       int64  = 600                                         // mongodb连接池GC时间，单位秒
+	mysqlconnstring       string = "root:@tcp(127.0.0.1:3306)"                 // mysql连接字符串
+	mysqlconncap          int    = 2048                                        // mysql连接池容量
+	mysqlmaxallowedpacket int    = 1048576                                     //mysql通信缓冲区的最大长度，单位B，默认1MB
+	kafkabrokers          string = "127.0.0.1:9092"                            //kafka broker字符串,逗号分割
 
 	mode        int    = status.UNSET // 节点角色
 	port        int    = 2015         // 主节点端口

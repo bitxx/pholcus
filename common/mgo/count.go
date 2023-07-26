@@ -6,7 +6,7 @@ import (
 
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/jason-wj/pholcus/common/pool"
+	"github.com/bitxx/pholcus/common/pool"
 )
 
 // 传入数据库与集合名 | 返回文档总数

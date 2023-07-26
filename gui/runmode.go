@@ -1,12 +1,10 @@
 package gui
 
 import (
+	"github.com/bitxx/pholcus/config"
+	"github.com/bitxx/pholcus/logs"
+	"github.com/bitxx/pholcus/runtime/status"
 	"github.com/lxn/walk"
-	. "github.com/lxn/walk/declarative"
-
-	"github.com/jason-wj/pholcus/config"
-	"github.com/jason-wj/pholcus/logs"
-	"github.com/jason-wj/pholcus/runtime/status"
 )
 
 func runmodeWindow() {

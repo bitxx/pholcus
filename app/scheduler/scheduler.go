@@ -4,10 +4,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jason-wj/pholcus/app/aid/proxy"
-	"github.com/jason-wj/pholcus/logs"
-	"github.com/jason-wj/pholcus/runtime/cache"
-	"github.com/jason-wj/pholcus/runtime/status"
+	"github.com/bitxx/pholcus/app/aid/proxy"
+	"github.com/bitxx/pholcus/logs"
+	"github.com/bitxx/pholcus/runtime/cache"
+	"github.com/bitxx/pholcus/runtime/status"
 )
 
 // 调度器
