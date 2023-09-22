@@ -1,12 +1,11 @@
 package common
 
 import (
+	"github.com/bitxx/pholcus/app/downloader/request"
+	. "github.com/bitxx/pholcus/app/spider"
+	"github.com/bitxx/pholcus/common/goquery"
 	"net/url"
 	"strings"
-
-	"github.com/bitxx/pholcus/common/goquery"
-
-	"github.com/bitxx/pholcus/app/downloader/request"
 )
 
 // Form is the default form element.

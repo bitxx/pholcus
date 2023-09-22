@@ -1,6 +1,7 @@
 package crawler
 
 import (
+	. "github.com/bitxx/pholcus/app/spider" //必需
 	"github.com/bitxx/pholcus/common/util"
 	"github.com/bitxx/pholcus/logs"
 )

@@ -3,6 +3,7 @@ package pholcus_lib
 // 基础包
 import (
 	"github.com/bitxx/pholcus/app/downloader/request" //必需
+	. "github.com/bitxx/pholcus/app/spider"           //必需
 	"github.com/bitxx/pholcus/common/goquery"         //DOM解析
 	"github.com/bitxx/pholcus/logs"                   //信息输出
 	// net包
